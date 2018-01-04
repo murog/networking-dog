@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //do i need this if i have line 3
 
 public class trulyMoveOrb : MonoBehaviour {
 	public KeyCode moveL;
@@ -38,10 +39,15 @@ public class trulyMoveOrb : MonoBehaviour {
 	void OnCollisionEnter(Collision other)
 	{	
 		if (other.gameObject.tag == "lethal") {
-			print("this is lethal");
+			print ("this is lethal");
 			Destroy (gameObject);
+		} else if (other.gameObject.tag == "klout") {
+			GM.kloutCount += 1;
+		} else if (other.gameObject.tag == "exit") {
+			print ("this is the exit huh");
+			SceneManager.LoadScene ("LevelComplete");
 		} else {
-			print("colliding rn");
+			print ("i'm colliding rn");
 		}
 	}
 

@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LevelComplete.unity
+    guid: 65af588727607469ba885418c38e2efd
+  - enabled: 1
+    path: Assets/Scenes/Sidewalk.unity
+    guid: b0e80de2731b448ef8264c240325018f

@@ -51,8 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GM.cs" />
      <Compile Include="Assets\Scripts\moveCam.cs" />
      <Compile Include="Assets\Scripts\moveOrb.cs" />
+     <Compile Include="Assets\Scripts\rorateEffect.cs" />
+     <Compile Include="Assets\Scripts\textZoomIn.cs" />
      <Compile Include="Assets\Scripts\trulyMoveOrb.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>

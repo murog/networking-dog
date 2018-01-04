@@ -12,6 +12,7 @@ public class trulyMoveOrb : MonoBehaviour {
 	public string controlBlocked = "n";
 	// Use this for initialization
 	void Start () {
+		print ("i'm starting haha");
 
 	}
 	
@@ -32,6 +33,16 @@ public class trulyMoveOrb : MonoBehaviour {
 			controlBlocked = "y";
 		}
 			
+	}
+
+	void OnCollisionEnter(Collision other)
+	{	
+		if (other.gameObject.tag == "lethal") {
+			print("this is lethal");
+			Destroy (gameObject);
+		} else {
+			print("colliding rn");
+		}
 	}
 
 	IEnumerator stopSlide ()

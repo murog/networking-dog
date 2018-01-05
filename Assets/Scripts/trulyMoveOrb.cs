@@ -46,11 +46,21 @@ public class trulyMoveOrb : MonoBehaviour {
 			GM.kloutCount += 1;
 		} else if (other.gameObject.tag == "exit") {
 			print ("this is the exit huh");
+			print ("the final klout");
+			print (GM.kloutCount);
 			SceneManager.LoadScene ("LevelComplete");
 		} else {
 			print ("i'm colliding rn");
 		}
 	}
+
+	void OnCollisionStay(Collision other) {
+		if (other.gameObject.tag == "klout") {
+			GM.kloutCount += 1;
+			print (GM.kloutCount);
+		} 
+	}
+
 
 	IEnumerator stopSlide ()
 	{

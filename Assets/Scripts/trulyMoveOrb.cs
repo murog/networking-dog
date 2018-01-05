@@ -6,9 +6,7 @@ using UnityEngine.SceneManagement; //do i need this if i have line 3
 public class trulyMoveOrb : MonoBehaviour {
 	public KeyCode moveL;
 	public KeyCode moveR;
-
 	public float horizVel = 0;
-
 	public int laneNum = 2;
 	public string controlBlocked = "n";
 	// Use this for initialization

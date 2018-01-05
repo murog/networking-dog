@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\moveOrb.cs" />
      <Compile Include="Assets\Scripts\networkingOpportunities.cs" />
      <Compile Include="Assets\Scripts\rorateEffect.cs" />
+     <Compile Include="Assets\Scripts\stats.cs" />
      <Compile Include="Assets\Scripts\textZoomIn.cs" />
      <Compile Include="Assets\Scripts\trulyMoveOrb.cs" />
  <Reference Include="UnityEngine.Analytics">

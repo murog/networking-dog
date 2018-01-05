@@ -9,6 +9,8 @@ public class trulyMoveOrb : MonoBehaviour {
 	public float horizVel = 0;
 	public int laneNum = 2;
 	public string controlBlocked = "n";
+	private float waitToLoad;
+	private string status;
 	// Use this for initialization
 	void Start () {
 		print ("i'm starting haha");
@@ -31,6 +33,12 @@ public class trulyMoveOrb : MonoBehaviour {
 			laneNum += 1;
 			controlBlocked = "y";
 		}
+		if (status == "exit") {
+			waitToLoad += Time.deltaTime;
+		}
+		if (waitToLoad > 1.8) {
+			SceneManager.LoadScene ("LevelComplete");
+		}
 			
 	}
 
@@ -44,9 +52,7 @@ public class trulyMoveOrb : MonoBehaviour {
 			GM.kloutCount += 1;
 		} else if (other.gameObject.tag == "exit") {
 			print ("this is the exit huh");
-			print ("the final klout");
-			print (GM.kloutCount);
-			SceneManager.LoadScene ("LevelComplete");
+			status = "exit";
 		} else {
 			print ("i'm colliding rn");
 		}

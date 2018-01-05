@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class startScreen : MonoBehaviour {
 	public float horizontalSpeed = 2.0F;
 	public float verticalSpeed = 2.0F;
-	public float resetSpeed = 1.0F;
+	public float resetSpeed = 0.5F;
 	public float cameraSpeed = 1.5F;
 	private bool gameStart;
 	private Rigidbody rb;
@@ -13,10 +14,13 @@ public class startScreen : MonoBehaviour {
 	private float v;
 	Quaternion originalRotation;
 	private bool restoreRotation = false;
+	private float waitToLoad;
+	public GUIText countDown;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 		originalRotation = transform.rotation;
+		countDown = GetComponent<GUIText> ();
 	}
 	
 	// Update is called once per frame
@@ -41,8 +45,16 @@ public class startScreen : MonoBehaviour {
 		if ((gameStart) && (transform.position.z < 25)) {
 			rb.velocity = (new Vector3 (0, 0, 1)) * cameraSpeed;
 		}
-		if (transform.position.z > 25) {
+		if (transform.position.z >= 25) {
 			rb.velocity = new Vector3 (0, 0, 0);
+			waitToLoad += Time.deltaTime;
+		}
+		if (waitToLoad > 0) {
+			countDown.text = "get ready";
+		}
+
+		if (waitToLoad > 2) {
+			SceneManager.LoadScene ("Sidewalk");
 		}
 	}
 }

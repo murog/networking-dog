@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 637615756}
   - component: {fileID: 637615761}
   - component: {fileID: 637615762}
+  - component: {fileID: 637615763}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -349,6 +350,8 @@ MonoBehaviour:
   horizontalSpeed: 2
   verticalSpeed: 2
   resetSpeed: 1
+  cameraSpeed: 3
+  countDown: {fileID: 0}
 --- !u!54 &637615762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -364,6 +367,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!132 &637615763
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637615755}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: ' '
+  m_Anchor: 4
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: 3384f5c71c82e485d812bd4d4679e6c2, type: 3}
+  m_Material: {fileID: 2100000, guid: aced04c2ae983424eb163f74a453c3a0, type: 3}
+  m_FontSize: 10
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &654103090
 GameObject:
   m_ObjectHideFlags: 0

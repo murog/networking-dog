@@ -59,6 +59,9 @@
      <Compile Include="Assets\Scripts\stats.cs" />
      <Compile Include="Assets\Scripts\textZoomIn.cs" />
      <Compile Include="Assets\Scripts\trulyMoveOrb.cs" />
+     <None Include="Assets\Fonts\Work-Sans-master\LICENSE.txt" />
+     <None Include="Assets\Fonts\Work-Sans-master\sources\BUILD.txt" />
+     <None Include="Assets\Fonts\Roboto_Mono\LICENSE.txt" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>

@@ -7,7 +7,7 @@ public class stats : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (gameObject.name == "kloutText") {
-			GetComponent<TextMesh> ().text = "klout " + GM.kloutCount;
+			GetComponent<TextMesh> ().text = GM.kloutCount + " klout";
 		}
 	}
 	

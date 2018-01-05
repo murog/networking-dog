@@ -40,6 +40,7 @@ public class trulyMoveOrb : MonoBehaviour {
 	{	
 		if (other.gameObject.tag == "lethal") {
 			print ("this is lethal");
+			print (other.gameObject);
 			Destroy (gameObject);
 		} else if (other.gameObject.tag == "klout") {
 			GM.kloutCount += 1;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - lethal
   - exit
+  - klout
   layers:
   - Default
   - TransparentFX

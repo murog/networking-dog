@@ -11,6 +11,8 @@ public class trulyMoveOrb : MonoBehaviour {
 	public string controlBlocked = "n";
 	private float waitToLoad;
 	private string status;
+	public float zScenePos;
+	public Transform path;
 	// Use this for initialization
 	void Start () {
 		print ("i'm starting haha");
@@ -39,6 +41,7 @@ public class trulyMoveOrb : MonoBehaviour {
 		if (waitToLoad > 1.8) {
 			SceneManager.LoadScene ("LevelComplete");
 		}
+			
 			
 	}
 

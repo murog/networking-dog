@@ -243,7 +243,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &368046045
@@ -309,7 +309,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 4cf166a73a9174bfaa90e38b18379658, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
 --- !u!23 &368046049
 MeshRenderer:
   m_ObjectHideFlags: 0

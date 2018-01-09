@@ -7,8 +7,8 @@ public class trulyMoveOrb : MonoBehaviour {
 	public KeyCode moveL;
 	public KeyCode moveR;
 	public float horizVel = 0;
-	public int laneNum = 2;
-	public string controlBlocked = "n";
+	public float laneNum = 2.0f;
+	public bool controlBlocked = false;
 	private float waitToLoad;
 	private string status;
 	public float zScenePos;
@@ -22,26 +22,29 @@ public class trulyMoveOrb : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GetComponent<Rigidbody>().velocity = new Vector3 (horizVel, 0, 4);
-		if ((Input.GetKeyDown(moveL)) && (laneNum > 1)) {
-			horizVel = -2;
+		if ((Input.GetKeyDown (moveL)) && (laneNum > 1) && (!controlBlocked)) {
+			horizVel = -1;
 			StartCoroutine (stopSlide ());
-			laneNum -= 1;
-			controlBlocked = "y";
-		}
-
-		if ((Input.GetKeyDown (moveR)) && (laneNum < 4) && (controlBlocked == "n")) {
-			horizVel = 2;
+			laneNum -= 0.5f;
+			controlBlocked = true;
+			print ("left!");
+		} else if ((Input.GetKeyDown (moveR)) && (laneNum < 4) && (!controlBlocked)) {
+			horizVel = 1;
 			StartCoroutine (stopSlide ());
-			laneNum += 1;
-			controlBlocked = "y";
+			laneNum += 0.5f;
+			controlBlocked = true;
+			print ("right!");
+		} else {
+//			horizVel = 0;
+			print ("else!!");
 		}
 		if (status == "exit") {
 			waitToLoad += Time.deltaTime;
 		}
 		if (waitToLoad > 1.8) {
 			SceneManager.LoadScene ("LevelComplete");
-		}
-			
+		} 
+		print (controlBlocked);
 			
 	}
 
@@ -64,15 +67,16 @@ public class trulyMoveOrb : MonoBehaviour {
 	void OnCollisionStay(Collision other) {
 		if (other.gameObject.tag == "klout") {
 			GM.kloutCount += 1;
-			print (GM.kloutCount);
+//			print (GM.kloutCount);
 		} 
 	}
 
 
 	IEnumerator stopSlide ()
 	{
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(0.3f);
 		horizVel = 0;
-		controlBlocked = "n";
+		controlBlocked = false;
+//		return;
 	}
 }

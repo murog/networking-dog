@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; //do i need this if i have line 3
 
-public class trulyMoveOrb : MonoBehaviour {
+namespace NetworkingDog {
+	
+public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	public KeyCode moveL;
 	public KeyCode moveR;
 	public float horizVel = 0;
@@ -13,6 +15,7 @@ public class trulyMoveOrb : MonoBehaviour {
 	private string status;
 	public float zScenePos;
 	public Transform path;
+	public static float playerPosition;
 	// Use this for initialization
 	void Start () {
 		print ("i'm starting haha");
@@ -41,10 +44,11 @@ public class trulyMoveOrb : MonoBehaviour {
 		if (status == "exit") {
 			waitToLoad += Time.deltaTime;
 		}
-		if (waitToLoad > 1.8) {
+		if (waitToLoad > 0.5) {
 			SceneManager.LoadScene ("LevelComplete");
 		} 
 		print (controlBlocked);
+		playerPosition = transform.position.z;
 			
 	}
 
@@ -70,7 +74,7 @@ public class trulyMoveOrb : MonoBehaviour {
 //			print (GM.kloutCount);
 		} 
 	}
-
+			
 
 	IEnumerator stopSlide ()
 	{
@@ -79,4 +83,5 @@ public class trulyMoveOrb : MonoBehaviour {
 		controlBlocked = false;
 //		return;
 	}
+}
 }

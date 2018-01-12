@@ -1,0 +1,682 @@
+fileFormatVersion: 2
+guid: f40fb72cd72e4a84fb9c71bad6a02661
+timeCreated: 1472691478
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: backLeg1_L
+    100002: backLeg1_R
+    100004: backLeg2_L
+    100006: backLeg2_R
+    100008: backPaw_L
+    100010: backPaw_R
+    100012: ear_L
+    100014: ear_L_001
+    100016: ear_R
+    100018: ear_R_001
+    100020: eye_L
+    100022: eye_R
+    100024: frontLeg1_L
+    100026: frontLeg1_R
+    100028: frontLeg2_L
+    100030: frontLeg2_R
+    100032: frontPaw_L
+    100034: frontPaw_R
+    100036: Head
+    100038: Low_Poly_Pug
+    100040: mouthbone
+    100042: nosebone
+    100044: //RootNode
+    100046: Pug_Skeleton
+    100048: RootBone
+    100050: Spine_002
+    100052: Tail
+    100054: Tail_001
+    100056: Tail_002
+    100058: Tail_003
+    100060: Tail_004
+    400000: backLeg1_L
+    400002: backLeg1_R
+    400004: backLeg2_L
+    400006: backLeg2_R
+    400008: backPaw_L
+    400010: backPaw_R
+    400012: ear_L
+    400014: ear_L_001
+    400016: ear_R
+    400018: ear_R_001
+    400020: eye_L
+    400022: eye_R
+    400024: frontLeg1_L
+    400026: frontLeg1_R
+    400028: frontLeg2_L
+    400030: frontLeg2_R
+    400032: frontPaw_L
+    400034: frontPaw_R
+    400036: Head
+    400038: Low_Poly_Pug
+    400040: mouthbone
+    400042: nosebone
+    400044: //RootNode
+    400046: Pug_Skeleton
+    400048: RootBone
+    400050: Spine_002
+    400052: Tail
+    400054: Tail_001
+    400056: Tail_002
+    400058: Tail_003
+    400060: Tail_004
+    4300000: Low_Poly_Pug
+    7400000: Default Take
+    7400002: Pug_Barking
+    7400004: Pug_Idle
+    7400006: Pug_Jump_Up
+    7400008: Pug_Run_Cycle
+    7400010: Pug_Walk_Cycle
+    9500000: //RootNode
+    13700000: Low_Poly_Pug
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 118
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Low_Poly_Pug
+        weight: 1
+      - path: Pug_Skeleton
+        weight: 1
+      - path: Pug_Skeleton/RootBone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L/ear_L_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R/ear_R_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/nosebone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002/Tail_004
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Pug_Barking
+      takeName: Pug_Barking
+      firstFrame: -1
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Low_Poly_Pug
+        weight: 1
+      - path: Pug_Skeleton
+        weight: 1
+      - path: Pug_Skeleton/RootBone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L/ear_L_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R/ear_R_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/nosebone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002/Tail_004
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Pug_Idle
+      takeName: Pug_Idle
+      firstFrame: -1
+      lastFrame: 159
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Low_Poly_Pug
+        weight: 1
+      - path: Pug_Skeleton
+        weight: 1
+      - path: Pug_Skeleton/RootBone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L/ear_L_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R/ear_R_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/nosebone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002/Tail_004
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Pug_Jump_Up
+      takeName: Pug_Jump_Up
+      firstFrame: -1
+      lastFrame: 54
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Low_Poly_Pug
+        weight: 1
+      - path: Pug_Skeleton
+        weight: 1
+      - path: Pug_Skeleton/RootBone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L/ear_L_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R/ear_R_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/nosebone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002/Tail_004
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Pug_Run_Cycle
+      takeName: Pug_Run_Cycle
+      firstFrame: -1
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Low_Poly_Pug
+        weight: 1
+      - path: Pug_Skeleton
+        weight: 1
+      - path: Pug_Skeleton/RootBone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L/ear_L_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R/ear_R_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/nosebone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002/Tail_004
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Pug_Walk_Cycle
+      takeName: Pug_Walk_Cycle
+      firstFrame: -1
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Low_Poly_Pug
+        weight: 1
+      - path: Pug_Skeleton
+        weight: 1
+      - path: Pug_Skeleton/RootBone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_L/backLeg2_L/backPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/backLeg1_R/backLeg2_R/backPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_L/frontLeg2_L/frontPaw_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/frontLeg1_R/frontLeg2_R/frontPaw_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_L/ear_L_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/ear_R/ear_R_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_L
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/eye_R
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/mouthbone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Spine_002/Head/nosebone
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002
+        weight: 1
+      - path: Pug_Skeleton/RootBone/Tail_003/Tail/Tail_001/Tail_002/Tail_004
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

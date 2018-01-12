@@ -8,6 +8,8 @@ TagManager:
   - exit
   - klout
   - start
+  - garbage
+  - sidewalk
   layers:
   - Default
   - TransparentFX

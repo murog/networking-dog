@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\garbage.cs" />
      <Compile Include="Assets\Scripts\GlobalVariables.cs" />
      <Compile Include="Assets\Scripts\GM.cs" />
      <Compile Include="Assets\Scripts\GroundScroll.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Scripts\moveOrb.cs" />
      <Compile Include="Assets\Scripts\networkingOpportunities.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\RandomProp.cs" />
      <Compile Include="Assets\Scripts\rotateEffect.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\spawner.cs" />

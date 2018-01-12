@@ -13,7 +13,7 @@ namespace NetworkingDog
 //		[SerializeField]
 		public Transform sidewalk;
 		private Renderer m_renderer;
-		private float m_offset = 0f;
+//		private float m_offset = 0f;
 		private float spawnPosition = 35.0f;
 		private float playerPosition;
 		private int i = 1;
@@ -45,6 +45,12 @@ namespace NetworkingDog
 //			m_offset -= Time.deltaTime * (GlobalVariables.ScrollSpeed / m_scrollDivider);
 
 //			m_renderer.material.mainTextureOffset = new Vector3(0, m_offset, 0);
+		}
+
+		void OnCollisionEnter(Collision other){
+			if (other.gameObject.tag == "garbage") {
+				Destroy (gameObject);
+			}
 		}
 	}
 }

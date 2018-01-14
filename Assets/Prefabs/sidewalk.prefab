@@ -103,13 +103,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1721816266019566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b137c991000142d091c28b6bdc2eec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_scrollDivider: 0
   sidewalk: {fileID: 0}
+  tree1: {fileID: 0}
+  tree2: {fileID: 0}
+  tree3: {fileID: 0}
+  tree4: {fileID: 0}
+  tree5: {fileID: 0}
 --- !u!136 &136013431488392478
 CapsuleCollider:
   m_ObjectHideFlags: 1

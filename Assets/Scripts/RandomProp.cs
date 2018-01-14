@@ -5,7 +5,7 @@ using UnityEngine;
 namespace NetworkingDog {
 
 public class RandomProp : MonoBehaviour {
-
+	
 	// Use this for initialization
 	void Start () {
 		

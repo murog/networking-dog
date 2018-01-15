@@ -55,7 +55,11 @@ namespace NetworkingDog
 //				randomIndex = Random.Range (0, trees.Length);
 				print(spawnedSidewalk.transform);
 				rando.transform.parent = spawnedSidewalk;
-				Instantiate (rando, spawnedSidewalk.transform.position, Quaternion.identity);
+				Vector3 leftPosition = new Vector3 (-5, 4, spawnedSidewalk.transform.position.z);
+				Vector3 rightPosition = new Vector3 (5, 4, spawnedSidewalk.transform.position.z);
+				(Instantiate (rando, leftPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+				(Instantiate (rando, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+
 //				s_tree = trees [randomIndex];
 //				s_tree.parent = spawnedSidewalk;
 //				GameObject go = Instantiate(rando, new Vector3(-5, 0, -10), Quaternion.identity) as GameObject;

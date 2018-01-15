@@ -50,15 +50,20 @@ namespace NetworkingDog
 			while ( i < j) {
 				print (i);
 //				rando = new GameObject ();
-				rando = Prefabs.RandomTree () as GameObject;
+//				rando = Prefabs.RandomTree () as GameObject;
 				spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, i * 20), Quaternion.identity);
 //				randomIndex = Random.Range (0, trees.Length);
 				print(spawnedSidewalk.transform);
-				rando.transform.parent = spawnedSidewalk;
-				Vector3 leftPosition = new Vector3 (-5, 4, spawnedSidewalk.transform.position.z);
-				Vector3 rightPosition = new Vector3 (5, 4, spawnedSidewalk.transform.position.z);
-				(Instantiate (rando, leftPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
-				(Instantiate (rando, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+//				rando.transform.parent = spawnedSidewalk;
+				for (int offset = 0; offset < 100 ; offset += 10) {
+					rando = Prefabs.RandomTree () as GameObject;
+					rando.transform.parent = spawnedSidewalk;
+					Vector3 leftPosition = new Vector3 (-5, 4, spawnedSidewalk.transform.position.z + offset);
+					Vector3 rightPosition = new Vector3 (5, 4, spawnedSidewalk.transform.position.z + offset);
+					(Instantiate (rando, leftPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+					(Instantiate (rando, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+				}
+
 
 //				s_tree = trees [randomIndex];
 //				s_tree.parent = spawnedSidewalk;

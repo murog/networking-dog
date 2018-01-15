@@ -4,24 +4,32 @@ using UnityEngine;
 
 namespace NetworkingDog {
 public class Prefabs : MonoBehaviour {
-	private Object[] props;
+	private static Object[] trees;
 
 
 	// Use this for initialization
 	void Start () {
-			props = Resources.LoadAll("PROPS_ENVIRONMENT", typeof(GameObject)) as Object[];
-			foreach (var item in props) {
+			trees = Resources.LoadAll("PROPS_ENVIRONMENT/trees", typeof(GameObject)) as Object[];
+			foreach (var item in trees) {
 				print (item);
 			}
-			print (props);
-
-
-		
+//			print(RandomTree ());
+			print(RandomTree());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
+
+	public virtual Object RandomTree() {
+		var index = Random.Range(0, trees.Length);
+//		return trees[index].name;
+		print("the random tree is");
+//		print(trees[index]);
+		var rando = trees [index];
+		return rando;
+	}
+
 }
 }

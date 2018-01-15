@@ -23,7 +23,7 @@ namespace NetworkingDog
 		public Transform tree3;
 		public Transform tree4;
 		public Transform tree5;
-		private GameObject rando; 
+		private GameObject rando;  
 //		GameObject[] trees = {tree1, tree2, tree3, tree4, tree5};
 //		static Random rnd = new Random();
 //		private int randomIndex = rnd.Next(0, trees.Length);
@@ -33,26 +33,34 @@ namespace NetworkingDog
 //		private Transform s_tree2;
 //		private Transform s_tree3;
 //		private Transform s_tree4;
+		private Transform spawnedSidewalk;
+
 
 
 		void Start()
 		{
 			m_renderer = GetComponent<Renderer>();
-			Transform[] trees = {tree1, tree2, tree3, tree4, tree5};
+//			Transform[] trees = {tree1, tree2, tree3, tree4, tree5};
 //			int index = rnd.Next(0, trees.Length);
 			print (m_renderer);
-			rando = Prefabs.RandomTree () as GameObject;
+//			rando = Prefabs.RandomTree () as GameObject;
 			print ("rando is");
 			print (rando);
 //			print(Prefabs.RandomTree);
 			while ( i < j) {
 				print (i);
-				var spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, i * 20), Quaternion.identity);
-				randomIndex = Random.Range (0, trees.Length);
+//				rando = new GameObject ();
+				rando = Prefabs.RandomTree () as GameObject;
+				spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, i * 20), Quaternion.identity);
+//				randomIndex = Random.Range (0, trees.Length);
 				print(spawnedSidewalk.transform);
+				rando.transform.parent = spawnedSidewalk;
+				Instantiate (rando, spawnedSidewalk.transform.position, Quaternion.identity);
 //				s_tree = trees [randomIndex];
 //				s_tree.parent = spawnedSidewalk;
-//				Instantiate(s_tree, new Vector3(-5, 0, i *-10), Quaternion.identity);
+//				GameObject go = Instantiate(rando, new Vector3(-5, 0, -10), Quaternion.identity) as GameObject;
+//				(Instantiate(rando, new Vector3(-5, 0, -10), Quaternion.identity) as GameObject).transform.parent = spawnedSidewalk;
+//				go.transform.parent = spawnedSidewalk;
 //				Instantiate(s_tree, new Vector3(5, 0, -10), Quaternion.identity);
 //				randomIndex = Random.Range(0, trees.Length);
 //				s_tree2 = trees [randomIndex];

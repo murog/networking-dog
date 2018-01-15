@@ -23,7 +23,7 @@ namespace NetworkingDog
 		public Transform tree3;
 		public Transform tree4;
 		public Transform tree5;
-		private GameObject rando;  
+		private GameObject rando_tree;  
 //		GameObject[] trees = {tree1, tree2, tree3, tree4, tree5};
 //		static Random rnd = new Random();
 //		private int randomIndex = rnd.Next(0, trees.Length);
@@ -34,6 +34,9 @@ namespace NetworkingDog
 //		private Transform s_tree3;
 //		private Transform s_tree4;
 		private Transform spawnedSidewalk;
+		private GameObject rando_lamp;
+		private GameObject rando_item;
+		private GameObject rando_street_item;
 
 
 
@@ -45,7 +48,7 @@ namespace NetworkingDog
 			print (m_renderer);
 //			rando = Prefabs.RandomTree () as GameObject;
 			print ("rando is");
-			print (rando);
+			print (rando_tree);
 //			print(Prefabs.RandomTree);
 			while ( i < j) {
 				print (i);
@@ -56,12 +59,20 @@ namespace NetworkingDog
 				print(spawnedSidewalk.transform);
 //				rando.transform.parent = spawnedSidewalk;
 				for (int offset = -50; offset < 50 ; offset += 5) {
-					rando = Prefabs.RandomTree () as GameObject;
-					rando.transform.parent = spawnedSidewalk;
+					rando_tree = Prefabs.RandomTree () as GameObject;
+					rando_tree.transform.parent = spawnedSidewalk;
+					rando_lamp = Prefabs.RandomStreetLamp () as GameObject;
+					rando_lamp.transform.parent = spawnedSidewalk;
+					rando_item = Prefabs.RandomItem () as GameObject;
+					rando_street
 					Vector3 leftPosition = new Vector3 (-5, 4, spawnedSidewalk.transform.position.z + offset);
 					Vector3 rightPosition = new Vector3 (5, 4, spawnedSidewalk.transform.position.z + offset);
-					(Instantiate (rando, leftPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
-					(Instantiate (rando, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+//					Instantiate trees
+					(Instantiate (rando_tree, leftPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+					(Instantiate (rando_tree, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+//					Instantiate street lamps
+//					Instantiate random props
+//					Instantiate construction items?
 				}
 
 

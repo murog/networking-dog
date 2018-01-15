@@ -16,7 +16,7 @@ namespace NetworkingDog
 //		private float m_offset = 0f;
 		private float spawnPosition = 35.0f;
 		private float playerPosition;
-		private int i = 1;
+		private int i = 0;
 		private int j = 3;
 		public Transform tree1;
 		public Transform tree2;
@@ -51,11 +51,11 @@ namespace NetworkingDog
 				print (i);
 //				rando = new GameObject ();
 //				rando = Prefabs.RandomTree () as GameObject;
-				spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, i * 20), Quaternion.identity);
+				spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, i * 100), Quaternion.identity);
 //				randomIndex = Random.Range (0, trees.Length);
 				print(spawnedSidewalk.transform);
 //				rando.transform.parent = spawnedSidewalk;
-				for (int offset = 0; offset < 100 ; offset += 10) {
+				for (int offset = -50; offset < 50 ; offset += 5) {
 					rando = Prefabs.RandomTree () as GameObject;
 					rando.transform.parent = spawnedSidewalk;
 					Vector3 leftPosition = new Vector3 (-5, 4, spawnedSidewalk.transform.position.z + offset);

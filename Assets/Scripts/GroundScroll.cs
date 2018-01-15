@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//using NetworkingDog;
 namespace NetworkingDog
 {
 	[AddComponentMenu("CUSTOM / Ground Scroll")]
@@ -23,6 +23,7 @@ namespace NetworkingDog
 		public Transform tree3;
 		public Transform tree4;
 		public Transform tree5;
+		private GameObject rando; 
 //		GameObject[] trees = {tree1, tree2, tree3, tree4, tree5};
 //		static Random rnd = new Random();
 //		private int randomIndex = rnd.Next(0, trees.Length);
@@ -40,6 +41,10 @@ namespace NetworkingDog
 			Transform[] trees = {tree1, tree2, tree3, tree4, tree5};
 //			int index = rnd.Next(0, trees.Length);
 			print (m_renderer);
+			rando = Prefabs.RandomTree () as GameObject;
+			print ("rando is");
+			print (rando);
+//			print(Prefabs.RandomTree);
 			while ( i < j) {
 				print (i);
 				var spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, i * 20), Quaternion.identity);

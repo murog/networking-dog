@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace NetworkingDog {
-public class Prefabs : MonoBehaviour {
+	public class Prefabs : MonoBehaviour {
 	private static Object[] trees;
 
 
@@ -14,7 +14,7 @@ public class Prefabs : MonoBehaviour {
 				print (item);
 			}
 //			print(RandomTree ());
-			print(RandomTree());
+//			print(RandomTree());
 	}
 	
 	// Update is called once per frame
@@ -22,7 +22,7 @@ public class Prefabs : MonoBehaviour {
 
 	}
 
-	public virtual Object RandomTree() {
+	public static Object RandomTree() {
 		var index = Random.Range(0, trees.Length);
 //		return trees[index].name;
 		print("the random tree is");

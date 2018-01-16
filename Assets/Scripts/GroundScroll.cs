@@ -133,6 +133,7 @@ namespace NetworkingDog
 		private void SpawnSidewalk (int z_offset) {
 			spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, z_offset * 100), Quaternion.identity);
 			SpawnTrees (spawnedSidewalk);
+			SpawnStreetLamps (spawnedSidewalk);
 		}
 
 		private void SpawnTrees (Transform parentSidewalk) {
@@ -141,9 +142,23 @@ namespace NetworkingDog
 //				rando_tree.transform.parent = parentSidewalk;
 				Vector3 leftPosition = new Vector3 (-5, 4, spawnedSidewalk.transform.position.z + offset);
 				Vector3 rightPosition = new Vector3 (5, 4, spawnedSidewalk.transform.position.z + offset);
-				(Instantiate (rando_tree, leftPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+				Quaternion leftRotation = Quaternion.Euler(0, 180,0);
+				(Instantiate (rando_tree, leftPosition, leftRotation)).transform.parent = spawnedSidewalk;
 				(Instantiate (rando_tree, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
 			}
 		}
+
+		private void SpawnStreetLamps(Transform parentSidewalk) {
+			for (float offset = -47.5f; offset < 47.5; offset += 10) {
+				rando_lamp = Prefabs.RandomStreetLamp() as GameObject;
+				Vector3 leftPosition = new Vector3 (-5, spawnedSidewalk.transform.position.y +2, spawnedSidewalk.transform.position.z + offset);
+				Vector3 rightPosition = new Vector3 (5, spawnedSidewalk.transform.position.y + 2, spawnedSidewalk.transform.position.z + offset);
+				Quaternion leftRotation = Quaternion.Euler(0, 180,0);
+				(Instantiate (rando_lamp, leftPosition, leftRotation)).transform.parent = spawnedSidewalk;
+				(Instantiate (rando_lamp, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+			}
+		}
+
+//		private void SpawnStreetLamps(Transoform 
 	}
 }

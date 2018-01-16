@@ -35,8 +35,8 @@ namespace NetworkingDog
 //		private Transform s_tree4;
 		private Transform spawnedSidewalk;
 		private GameObject rando_lamp;
-//		private GameObject rando_item;
-//		private GameObject rando_street_item;
+		private GameObject rando_item;
+		private GameObject rando_street_item;
 
 
 
@@ -134,6 +134,8 @@ namespace NetworkingDog
 			spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, z_offset * 100), Quaternion.identity);
 			SpawnTrees (spawnedSidewalk);
 			SpawnStreetLamps (spawnedSidewalk);
+			SpawnRandomItems (spawnedSidewalk);
+			SpawnRandomStreetItems (spawnedSidewalk);
 		}
 
 		private void SpawnTrees (Transform parentSidewalk) {
@@ -158,7 +160,26 @@ namespace NetworkingDog
 				(Instantiate (rando_lamp, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
 			}
 		}
+		private void SpawnRandomItems(Transform parentSidewalk) {
+			for (float offset = -42.5f ; offset < 42.5f; offset += 10) {
+				rando_item = Prefabs.RandomItem() as GameObject;
+				Vector3 leftPosition = new Vector3 (-5, spawnedSidewalk.transform.position.y + 1.25f, spawnedSidewalk.transform.position.z + offset);
+				Vector3 rightPosition = new Vector3 (5, spawnedSidewalk.transform.position.y + 1.25f, spawnedSidewalk.transform.position.z + offset);
+				Quaternion leftRotation = Quaternion.Euler(0, 180,0);
+				(Instantiate (rando_item, leftPosition, leftRotation)).transform.parent = spawnedSidewalk;
+				(Instantiate (rando_item, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+			}			
+		}
 
-//		private void SpawnStreetLamps(Transoform 
+		private void SpawnRandomStreetItems(Transform parentSidewalk) {
+			for (float offset = -48.5f ; offset < 48.5f; offset += 10) {
+				rando_street_item = Prefabs.RandomStreetItem() as GameObject;
+				Vector3 leftPosition = new Vector3 (-5, spawnedSidewalk.transform.position.y + 1.25f, spawnedSidewalk.transform.position.z + offset);
+				Vector3 rightPosition = new Vector3 (5, spawnedSidewalk.transform.position.y + 1.25f, spawnedSidewalk.transform.position.z + offset);
+				Quaternion leftRotation = Quaternion.Euler(0, 180,0);
+				(Instantiate (rando_street_item, leftPosition, leftRotation)).transform.parent = spawnedSidewalk;
+				(Instantiate (rando_street_item, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
+			}
+		}
 	}
 }

@@ -14,7 +14,7 @@ namespace NetworkingDog
 		public Transform sidewalk;
 //		private Renderer m_renderer;
 //		private float m_offset = 0f;
-		private float spawnPosition = 35.0f;
+		private float spawnPosition = 0;
 		private float playerPosition;
 		private int i = 0;
 		private int j = 3;
@@ -50,10 +50,10 @@ namespace NetworkingDog
 //			print ("rando is");
 //			print (rando_tree);
 //			print(Prefabs.RandomTree);
-			while ( i < j) {
-				SpawnSidewalk (i);
-				i++;
-			}
+//			while ( i < j) {
+//				SpawnSidewalk (i);
+//				i++;
+//			}
 //				print (i);
 ////				rando = new GameObject ();
 ////				rando = Prefabs.RandomTree () as GameObject;
@@ -112,17 +112,16 @@ namespace NetworkingDog
 
 //			print (trulyMoveOrb.playerPosition);
 			if (playerPosition > spawnPosition) {
-				while (i < j) {
-//					Instantiate(sidewalk, new Vector3(0, 0, i * 20), Quaternion.identity);
-					i++;
+//					Instantiate(sidewalk, new Vector3(0, 0, i * 20), Quaternion.identity)
+				SpawnSidewalk(((spawnPosition+50)/50)-1);
 				}
-				j += 3;
-				spawnPosition = playerPosition + 50;
+
+//				spawnPosition = playerPosition + 50;
 			}
 //			m_offset -= Time.deltaTime * (GlobalVariables.ScrollSpeed / m_scrollDivider);
 
 //			m_renderer.material.mainTextureOffset = new Vector3(0, m_offset, 0);
-		}
+
 
 		void OnCollisionEnter(Collision other){
 			if (other.gameObject.tag == "garbage") {
@@ -130,12 +129,22 @@ namespace NetworkingDog
 			}
 		}
 
-		private void SpawnSidewalk (int z_offset) {
+		private void SpawnSidewalk (float z_offset) {
+			if (z_offset < 0) {
+				z_offset = 0;
+			}
 			spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, z_offset * 100), Quaternion.identity);
+
 			SpawnTrees (spawnedSidewalk);
 			SpawnStreetLamps (spawnedSidewalk);
 			SpawnRandomItems (spawnedSidewalk);
 			SpawnRandomStreetItems (spawnedSidewalk);
+			if (spawnedSidewalk.transform.position.z < 100) {
+				spawnPosition = spawnedSidewalk.transform.position.z +50;
+
+			} else {
+				spawnPosition = spawnedSidewalk.transform.position.z - 50;
+			}
 		}
 
 		private void SpawnTrees (Transform parentSidewalk) {
@@ -181,5 +190,7 @@ namespace NetworkingDog
 				(Instantiate (rando_street_item, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;
 			}
 		}
+
+
 	}
 }

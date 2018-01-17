@@ -10,6 +10,8 @@ namespace NetworkingDog
 	{
 		[SerializeField]
 		private float m_scrollDivider;
+//		public Transform player;
+		private Object player;
 		public Transform sidewalk;
 		public Transform tree1;
 		public Transform tree2;
@@ -30,17 +32,19 @@ namespace NetworkingDog
 
 		void Start()
 		{
-
+			player = Resources.Load ("player", typeof(GameObject)) as Object;
 			SpawnSidewalk(0);
-//			SpawnSidewalk (1);
+			SpawnSidewalk(1);
+			SpawnSidewalk(2);
 
 		}
 
 		void Update()
 		{	
-//			if ((MoveGround.spawnable) && (spawnCount % 2 == 0)) {
-//				SpawnSidewalk (spawnCount);
-//			}
+			if (garbage.spawnable) {
+				SpawnSidewalk (2);
+				garbage.spawnable = false;
+			}
 		}
 
 
@@ -52,10 +56,11 @@ namespace NetworkingDog
 		}
 
 		private void SpawnSidewalk (float z_offset) {
-			if (z_offset < 0) {
-				z_offset = 0;
-			}
 			spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, z_offset * 100), Quaternion.identity);
+			if (z_offset == 0) {
+//				Vector3 playerSpawn = new Vector3 (spawnedSidewalk.transform.position.x, spawnedSidewalk.transform.position.y + 1, spawnedSidewalk.transform.position.z);
+//				Instantiate (player, playerSpawn, Quaternion.identity);
+			}
 			SpawnTrees (spawnedSidewalk);
 			SpawnStreetLamps (spawnedSidewalk);
 			SpawnRandomItems (spawnedSidewalk);

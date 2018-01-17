@@ -5,7 +5,6 @@ using UnityEngine;
 namespace NetworkingDog {
 	[RequireComponent(typeof(Rigidbody))]
 public class MoveGround : MonoBehaviour {
-	public static bool spawnable = true;
 	private Rigidbody rb;
 	// Use this for initialization
 	void Start () {
@@ -18,17 +17,22 @@ public class MoveGround : MonoBehaviour {
 			rb.velocity = new Vector3 (0, 0, -2);
 			print ("the updated position is");
 			print (transform.position);
+			print ("the updated rotation is");
+			print (transform.rotation);
 	}
-	void OnCollisionEnter (Collision other) {
+		void OnCollisionEnter (Collision other) {
 		print ("secretly colliding rn");
 		print (other.gameObject.name);
 			if (other.gameObject.tag != "garbage") {
-				Physics.IgnoreCollision (other.GetComponent<Collider> (), GetComponent<Collider> (), true);
+//				Physics.IgnoreCollision (other.GetComponent<Collider> (), GetComponent<Collider> (), true);
+				Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
+				print ("the other is");
+				print(other);
 			} else {
 				print ("lol i'm in here");
 			}
 		if (other.gameObject.tag == "garbage") {
-			spawnable = true;
+//			spawnable = true;
 		}
 	}
 

@@ -5,6 +5,8 @@ using UnityEngine;
 namespace NetworkingDog {
 	
 public class garbage : MonoBehaviour {
+	public static bool spawnable = false;
+
 //		[SerializeField]
 //		private Rigidbody rb;
 //		private static bool spawnable = true;
@@ -20,6 +22,7 @@ public class garbage : MonoBehaviour {
 
 	void OnTriggerExit(Collider other) {
 			Destroy(other.gameObject);
+			spawnable = true;
 	}
 	}
 }

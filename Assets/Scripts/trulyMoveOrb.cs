@@ -54,16 +54,18 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 
 	void OnCollisionEnter(Collision other)
 	{	
-		if (other.gameObject.tag == "lethal") {
-			print ("this is lethal");
-			print (other.gameObject);
-			Destroy (gameObject);
-		} else if (other.gameObject.tag == "klout") {
-			GM.kloutCount += 1;
-		} else if (other.gameObject.tag == "exit") {
-			print ("this is the exit huh");
-			status = "exit";
-		} 
+			if (other.gameObject.tag == "lethal") {
+				print ("this is lethal");
+				print (other.gameObject);
+				Destroy (gameObject);
+			} else if (other.gameObject.tag == "klout") {
+				GM.kloutCount += 1;
+			} else if (other.gameObject.tag == "exit") {
+				print ("this is the exit huh");
+				status = "exit";
+			} else if (other.gameObject.tag == "sidewalk") {
+				Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
+			}
 	}
 
 	void OnCollisionStay(Collision other) {

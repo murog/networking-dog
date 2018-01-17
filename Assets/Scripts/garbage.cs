@@ -5,19 +5,20 @@ using UnityEngine;
 namespace NetworkingDog {
 	
 public class garbage : MonoBehaviour {
-		[SerializeField]
-		private Rigidbody rb;
+//		[SerializeField]
+//		private Rigidbody rb;
+//		private static bool spawnable = true;
 	// Use this for initialization
 	void Start () {
-			rb = GetComponent<Rigidbody> ();
+//			rb = GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-			rb.velocity = new Vector3 (0, 0, 0.5f);
+//			rb.velocity = new Vector3 (0, 0, 0.5f);
 	}
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerExit(Collider other) {
 			Destroy(other.gameObject);
 	}
 	}

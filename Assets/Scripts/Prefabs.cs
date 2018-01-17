@@ -13,25 +13,25 @@ namespace NetworkingDog {
 	// Use this for initialization
 	void Start () {
 			trees = Resources.LoadAll("PROPS_ENVIRONMENT/trees", typeof(GameObject)) as Object[];
-			print ("the trees are");
-			foreach (var item in trees) {
-				print (item);
-			}
+//			print ("the trees are");
+//			foreach (var item in trees) {
+//				print (item);
+//			}
 			random = Resources.LoadAll ("PROPS_ENVIRONMENT/random", typeof(GameObject)) as Object[];
-			print ("the random items are");
-			foreach (var item in random) {
-				print (item);
-			}
+//			print ("the random items are");
+//			foreach (var item in random) {
+//				print (item);
+//			}
 			street = Resources.LoadAll ("PROPS_ENVIRONMENT/street", typeof(GameObject)) as Object[];
-			print ("the street items are");
-			foreach (var item in street) {
-				print (item);
-			}
+//			print ("the street items are");
+//			foreach (var item in street) {
+//				print (item);
+//			}
 			construction = Resources.LoadAll ("PROPS_ENVIRONMENT/construction", typeof(GameObject)) as Object[];
 			print ("the construction items are");
-			foreach (var item in construction) {
-				print (item);
-			}
+//			foreach (var item in construction) {
+//				print (item);
+//			}
 			streetLamps = Resources.LoadAll ("PROPS_ENVIRONMENT/street_lamps", typeof(GameObject)) as Object[];
 //			print(RandomTree ());
 //			print(RandomTree());
@@ -45,7 +45,7 @@ namespace NetworkingDog {
 	public static Object RandomTree() {
 		var index = Random.Range(0, trees.Length);
 //		return trees[index].name;
-		print("the random tree is");
+//		print("the random tree is");
 //		print(trees[index]);
 		var rando = trees [index];
 		return rando;

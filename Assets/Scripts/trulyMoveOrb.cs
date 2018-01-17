@@ -18,7 +18,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	public static float playerPosition;
 	// Use this for initialization
 	void Start () {
-		print ("i'm starting haha");
+//		print ("i'm starting haha");
 
 	}
 	
@@ -63,9 +63,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 		} else if (other.gameObject.tag == "exit") {
 			print ("this is the exit huh");
 			status = "exit";
-		} else {
-			print ("i'm colliding rn");
-		}
+		} 
 	}
 
 	void OnCollisionStay(Collision other) {

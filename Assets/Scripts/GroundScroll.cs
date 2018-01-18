@@ -36,13 +36,14 @@ namespace NetworkingDog
 			SpawnSidewalk(0);
 			SpawnSidewalk(1);
 			SpawnSidewalk(2);
+			SpawnSidewalk (3);
 
 		}
 
 		void Update()
 		{	
 			if (garbage.spawnable) {
-				SpawnSidewalk (2);
+				SpawnSidewalk (3);
 				garbage.spawnable = false;
 			}
 		}

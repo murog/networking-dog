@@ -8,7 +8,7 @@ namespace NetworkingDog {
 public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	public KeyCode moveL;
 	public KeyCode moveR;
-	public float horizVel = 0;
+	public float horizVel = 1;
 	public float laneNum = 2.0f;
 	public bool controlBlocked = false;
 	private float waitToLoad;
@@ -16,39 +16,57 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	public float zScenePos;
 	public Transform path;
 	public static float playerPosition;
+	private Rigidbody rb;
 	// Use this for initialization
 	void Start () {
-//		print ("i'm starting haha");
+		rb = GetComponent<Rigidbody>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GetComponent<Rigidbody>().velocity = new Vector3 (horizVel, 0, 4);
-		if ((Input.GetKeyDown (moveL)) && (laneNum > 1) && (!controlBlocked)) {
-			horizVel = -1;
-			StartCoroutine (stopSlide ());
-			laneNum -= 0.5f;
-			controlBlocked = true;
-			print ("left!");
-		} else if ((Input.GetKeyDown (moveR)) && (laneNum < 4) && (!controlBlocked)) {
-			horizVel = 1;
-			StartCoroutine (stopSlide ());
-			laneNum += 0.5f;
-			controlBlocked = true;
-			print ("right!");
+		if (Input.GetKeyDown (moveL)) {
+			if (horizVel < 5) {
+				horizVel++;
+			}
+			print ("left");
+		} else if (Input.GetKeyDown (moveR)) {
+			if (horizVel > -5) {
+				horizVel--;
+			}	
+			print ("right");
 		} else {
 //			horizVel = 0;
-			print ("else!!");
+			print ("else");
 		}
+		rb.velocity = new Vector3 (horizVel, 0, 0);
+
+
+//		GetComponent<Rigidbody>().velocity = new Vector3 (horizVel, 0, 0);
+//		if ((Input.GetKeyDown (moveL)) && (laneNum > 1) && (!controlBlocked)) {
+//			horizVel = -1;
+////			StartCoroutine (stopSlide ());
+//			laneNum -= 0.5f;
+//			controlBlocked = true;
+//			print ("left!");
+//		} else if ((Input.GetKeyDown (moveR)) && (laneNum < 4) && (!controlBlocked)) {
+//			horizVel = 1;
+////			StartCoroutine (stopSlide ());
+//			laneNum += 0.5f;
+//			controlBlocked = true;
+//			print ("right!");
+//		} else {
+////			horizVel = 0;
+//			print ("else!!");
+//		}
 		if (status == "exit") {
 			waitToLoad += Time.deltaTime;
 		}
 		if (waitToLoad > 0.5) {
 			SceneManager.LoadScene ("LevelComplete");
 		} 
-		print (controlBlocked);
-		playerPosition = transform.position.z;
+//		print (controlBlocked);
+//		playerPosition = transform.position.z;
 			
 	}
 

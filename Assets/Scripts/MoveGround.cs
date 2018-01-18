@@ -14,11 +14,11 @@ public class MoveGround : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 //			Physics.IgnoreCollision(other.GetComponent<Collider>(), GetComponent<Collider>());
-			rb.velocity = new Vector3 (0, 0, -2);
-			print ("the updated position is");
-			print (transform.position);
-			print ("the updated rotation is");
-			print (transform.rotation);
+			rb.velocity = new Vector3 (0, 0, -4);
+//			print ("the updated position is");
+//			print (transform.position);
+//			print ("the updated rotation is");
+//			print (transform.rotation);
 	}
 		void OnCollisionEnter (Collision other) {
 		print ("secretly colliding rn");

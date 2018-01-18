@@ -14,7 +14,7 @@ public class MoveGround : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 //			Physics.IgnoreCollision(other.GetComponent<Collider>(), GetComponent<Collider>());
-			rb.velocity = new Vector3 (0, 0, -4);
+			rb.velocity = new Vector3 (0, 0, GroundScroll.ground_speed);
 //			print ("the updated position is");
 //			print (transform.position);
 //			print ("the updated rotation is");

@@ -7,10 +7,11 @@ namespace NetworkingDog
 	[AddComponentMenu("CUSTOM / Ground Scroll")]
 //	[RequireComponent(typeof(Renderer))]
 	public class GroundScroll : Singleton<GroundScroll>
-	{
+	{	
+		[SerializeField]
+		public static float ground_speed;
 		[SerializeField]
 		private float m_scrollDivider;
-//		public Transform player;
 		private Object player;
 		public Transform sidewalk;
 		public Transform tree1;
@@ -31,7 +32,8 @@ namespace NetworkingDog
 
 
 		void Start()
-		{
+		{	
+			ground_speed = -4;
 			player = Resources.Load ("player", typeof(GameObject)) as Object;
 			SpawnSidewalk(0);
 			SpawnSidewalk(1);
@@ -75,8 +77,8 @@ namespace NetworkingDog
 			for (int offset = -50; offset < 50; offset+= 5) {
 				rando_tree = Prefabs.RandomTree () as GameObject;
 //				rando_tree.transform.parent = parentSidewalk;
-				Vector3 leftPosition = new Vector3 (-5, 4, spawnedSidewalk.transform.position.z + offset);
-				Vector3 rightPosition = new Vector3 (5, 4, spawnedSidewalk.transform.position.z + offset);
+				Vector3 leftPosition = new Vector3 (-5, spawnedSidewalk.transform.position.y + 10, spawnedSidewalk.transform.position.z + offset);
+				Vector3 rightPosition = new Vector3 (5, spawnedSidewalk.transform.position.y + 10, spawnedSidewalk.transform.position.z + offset);
 				Quaternion leftRotation = Quaternion.Euler(0, 180,0);
 				(Instantiate (rando_tree, leftPosition, leftRotation)).transform.parent = spawnedSidewalk;
 				(Instantiate (rando_tree, rightPosition, Quaternion.identity)).transform.parent = spawnedSidewalk;

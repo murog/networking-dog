@@ -23,9 +23,9 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 			int num = Random.Range (1, 3);
 			print("the number is " + num.ToString());
 			if (num % 2 == 0) {
-				horizVel = 0.5f;
+				horizVel = 1f;
 			} else {
-				horizVel = -0.5f;
+				horizVel = -1f;
 			}
 
 	}
@@ -35,11 +35,17 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 		if (Input.GetKeyDown (moveL)) {
 			if (horizVel < 5.5) {
 				horizVel++;
+				if (horizVel == 0) {
+				horizVel++;
+				}
 			}
 			print ("left");
 		} else if (Input.GetKeyDown (moveR)) {
 			if (horizVel > -5.5) {
 				horizVel--;
+				if (horizVel == 0) {
+					horizVel--;
+				}
 			}	
 			print ("right");
 		} else {

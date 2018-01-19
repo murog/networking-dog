@@ -15,7 +15,7 @@ public class networkingOpportunities : MonoBehaviour {
 
 	void Update() {
 		if (!collided) {
-			rb.velocity = new Vector3 (0, 0, -1);
+//			rb.velocity = new Vector3 (0, 0, -1);
 		} else {
 			rb.velocity = Vector3.zero;
 		}
@@ -24,6 +24,8 @@ public class networkingOpportunities : MonoBehaviour {
 	void OnCollisionEnter(Collision other) {
 		if (other.gameObject.tag == "Player") {
 			collided = true;
+		} else {
+			Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
 		}
 	}
 }

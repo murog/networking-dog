@@ -21,8 +21,10 @@ public class garbage : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider other) {
+			if (other.gameObject.tag == "sidewalk") {
+				spawnable = true;
+			}
 			Destroy(other.gameObject);
-			spawnable = true;
 	}
 	}
 }

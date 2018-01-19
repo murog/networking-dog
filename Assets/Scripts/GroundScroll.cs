@@ -10,6 +10,7 @@ namespace NetworkingDog
 	{	
 		[SerializeField]
 		public static float ground_speed;
+		public float set_speed;
 		[SerializeField]
 		private float m_scrollDivider;
 		private Object player;
@@ -33,7 +34,7 @@ namespace NetworkingDog
 
 		void Start()
 		{	
-			ground_speed = -4;
+//			ground_speed = -4;
 			player = Resources.Load ("player", typeof(GameObject)) as Object;
 			SpawnSidewalk(0);
 			SpawnSidewalk(1);
@@ -44,6 +45,7 @@ namespace NetworkingDog
 
 		void Update()
 		{	
+			ground_speed = set_speed;
 			if (garbage.spawnable) {
 				SpawnSidewalk (3);
 				garbage.spawnable = false;
@@ -68,6 +70,7 @@ namespace NetworkingDog
 			SpawnStreetLamps (spawnedSidewalk);
 			SpawnRandomItems (spawnedSidewalk);
 			SpawnRandomStreetItems (spawnedSidewalk);
+			SpawnPositive (spawnedSidewalk);
 			spawnCount++;
 			print ("the sidewalk position is");
 			print(spawnedSidewalk.transform.position);
@@ -117,11 +120,38 @@ namespace NetworkingDog
 			}
 		}
 
-//		private void SpawnItems(Transform parentSidewalk, float offset, ) {
-//			for (float i = offset; i < -(offset); i+= 10) {
-//				
+		private void SpawnPositive(Transform parentSidewalk) {
+			for (float offset = -50; offset < 50; offset += 10) {
+				float x_pos;
+				Quaternion randRotation;
+				int randNum = Random.Range (0, 100);
+				if (randNum > 30) {
+					GameObject random_positive = Prefabs.RandomPositive () as GameObject;
+					if (randNum % 2 == 0) {
+						int rand_x = Random.Range (0, 5);
+						x_pos = rand_x;
+						randRotation = Quaternion.Euler (0, 180, 0);
+					} else {
+						int rand_x = Random.Range (-5, 5);
+						x_pos = rand_x;
+						randRotation = Quaternion.identity;
+					}
+					Vector3 randPosition = new Vector3 (x_pos, parentSidewalk.transform.position.y + 1.25f, parentSidewalk.transform.position.z + offset);
+					(Instantiate (random_positive, randPosition, randRotation)).transform.parent = parentSidewalk;
+				}
+
+			}
+		}
+
+//		private void SpawnItems(Transform parentSidewalk, Object[] array, float offset, float increment, float x_offset, float y_offset, float z_offset) {
+//			for (float i = -offset; i < offset; offset += increment) {
+//				int randIndex = Random.Range (0, array.Length);
+//				GameObject randomItem = array [randIndex];
+//
 //			}
 //		}
+
+
 
 
 	}

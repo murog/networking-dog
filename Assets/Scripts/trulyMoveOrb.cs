@@ -77,10 +77,10 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 ////			horizVel = 0;
 //			print ("else!!");
 //		}
+//		if (status == "exit") {
+//			waitToLoad += Time.deltaTime;
+//		}
 		if (status == "exit") {
-			waitToLoad += Time.deltaTime;
-		}
-		if (waitToLoad > 0.5) {
 			SceneManager.LoadScene ("LevelComplete");
 		} 
 //		print (controlBlocked);
@@ -123,7 +123,13 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	IEnumerator outOfBounds() 
 	{
 		yield return new WaitForSeconds (3.5f);
-		print ("hey u lost");
+			if (transform.position.x > 5 || transform.position.x < -5) {
+				print ("hey u lost");
+				status = "exit";
+			} else {
+				print ("ok ur cool");
+				status = "cool";
+			}
 	}
 }
 }

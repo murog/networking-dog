@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class moveOrb : MonoBehaviour {
-
+	private Rigidbody rb;
 	public KeyCode moveL;
 	public KeyCode moveR;
 
@@ -12,12 +12,13 @@ public class moveOrb : MonoBehaviour {
 	public string controlBlocked;
 
 	void Start () {
-
+		rb = GetComponent<Rigidbody> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		GetComponent<Rigidbody>().velocity = new Vector3(horizVel, 0, 4);
+		rb.velocity = new Vector3(horizVel, 0, 4);
+		print (transform.position);
 
 		if ((Input.GetKeyDown(moveL)) && (laneNum>1) && (controlBlocked == "n")) {
 			horizVel = -2;
@@ -42,4 +43,6 @@ public class moveOrb : MonoBehaviour {
 		horizVel = 0;
 		controlBlocked = "n";
 		}
+
+
 	}﻿

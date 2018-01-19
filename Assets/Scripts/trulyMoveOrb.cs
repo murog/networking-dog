@@ -32,6 +32,11 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	
 	// Update is called once per frame
 	void Update () {
+		if ((transform.position.x > 5) || (transform.position.x < -5)) {
+			print("yer outta bounds");
+			StartCoroutine(outOfBounds());
+		}
+			
 		if (Input.GetKeyDown (moveL)) {
 			if (horizVel < 5.5) {
 				horizVel++;
@@ -113,6 +118,12 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 		horizVel = 0;
 		controlBlocked = false;
 //		return;
+	}
+
+	IEnumerator outOfBounds() 
+	{
+		yield return new WaitForSeconds (3.5f);
+		print ("hey u lost");
 	}
 }
 }

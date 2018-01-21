@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace NetworkingDog {
 public class stats : MonoBehaviour {
 
 	// Use this for initialization
@@ -15,4 +16,5 @@ public class stats : MonoBehaviour {
 	void Update () {
 		
 	}
+}
 }

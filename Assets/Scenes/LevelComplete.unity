@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   kloutText: {fileID: 0}
+  restart: 32
 --- !u!132 &119897610
 GUIText:
   m_ObjectHideFlags: 0

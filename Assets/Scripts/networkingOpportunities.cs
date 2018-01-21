@@ -14,16 +14,17 @@ public class networkingOpportunities : MonoBehaviour {
 	// Update is called once per frame
 
 	void Update() {
-		if (!collided) {
-//			rb.velocity = new Vector3 (0, 0, -1);
-		} else {
-			rb.velocity = Vector3.zero;
-		}
+//		if (!collided) {
+////			rb.velocity = new Vector3 (0, 0, -1);
+//		} else {
+////			rb.velocity = Vector3.zero;
+//		}
 	}
 
 	void OnCollisionEnter(Collision other) {
 		if (other.gameObject.tag == "Player") {
 			collided = true;
+//			TODO: DRAMATIC EXEUNT TO THE LEFT OR RIGHT
 		} else {
 			Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
 		}

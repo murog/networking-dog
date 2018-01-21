@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+namespace NetworkingDog {
 public class textZoomIn : MonoBehaviour {
 	public Rigidbody rb;
 	public GUIText kloutText;
+	public KeyCode restart;
 	private string count;
 	// Use this for initialization
 	void Start () {
@@ -26,5 +29,10 @@ public class textZoomIn : MonoBehaviour {
 		} else {
 			transform.Rotate (3, 0, 0);
 		}
+		if (Input.GetKeyDown(restart)) {
+			SceneManager.LoadScene ("Sidewalk");
+		} 
+
 	}
+}
 }

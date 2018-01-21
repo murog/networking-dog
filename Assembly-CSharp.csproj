@@ -69,7 +69,6 @@
      <Compile Include="Assets\Scripts\stats.cs" />
      <Compile Include="Assets\Scripts\textZoomIn.cs" />
      <Compile Include="Assets\Scripts\trulyMoveOrb.cs" />
-     <None Include="Assets\BrokenVector\FreeLowPolyPack\readme.txt" />
      <None Include="Assets\Fonts\Work-Sans-master\LICENSE.txt" />
      <None Include="Assets\Fonts\Work-Sans-master\sources\BUILD.txt" />
      <None Include="Assets\Fonts\Roboto_Mono\LICENSE.txt" />

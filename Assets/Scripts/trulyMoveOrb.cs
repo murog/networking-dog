@@ -17,6 +17,9 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	public Transform path;
 	public static float playerPosition;
 	private Rigidbody rb;
+	public static bool positiveCollision = false;
+	private bool outtaBounds = false;
+	private bool outtaBoundsPos;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
@@ -29,11 +32,14 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 			}
 
 	}
-	
+//	TODO: FLY AWAY BEHIND THEMSELVES,
 	// Update is called once per frame
 	void Update () {
-		if ((transform.position.x > 5) || (transform.position.x < -5)) {
-			print("yer outta bounds");
+//			TODO: CHECKOUT OUTTA BOUNDS AS A BOOL
+			if (((transform.position.x > 5) || (transform.position.x < -5)) && !outtaBounds) {
+			outtaBoundsPos = (transform.position.x > 0);
+			print("yer outta bounds" + outtaBounds.ToString());
+			outtaBounds = true;
 			StartCoroutine(outOfBounds());
 		}
 			
@@ -53,10 +59,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 				}
 			}	
 			print ("right");
-		} else {
-//			horizVel = 0;
-			print ("else");
-		}
+		} 
 		rb.velocity = new Vector3 (horizVel, 0, 0);
 
 
@@ -95,6 +98,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 				print (other.gameObject);
 				Destroy (gameObject);
 			} else if (other.gameObject.tag == "klout") {
+				positiveCollision = true;
 				GM.kloutCount += 1;
 			} else if (other.gameObject.tag == "exit") {
 				print ("this is the exit huh");
@@ -102,6 +106,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 			} else if (other.gameObject.tag == "sidewalk") {
 				Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
 			}
+
 	}
 
 	void OnCollisionStay(Collision other) {
@@ -123,12 +128,13 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	IEnumerator outOfBounds() 
 	{
 		yield return new WaitForSeconds (3.5f);
-			if (transform.position.x > 5 || transform.position.x < -5) {
+			if ((transform.position.x > 5 || transform.position.x < -5) && ((outtaBoundsPos == (transform.position.x > 0)))) {
 				print ("hey u lost");
 				status = "exit";
 			} else {
 				print ("ok ur cool");
 				status = "cool";
+				outtaBounds = false;
 			}
 	}
 }

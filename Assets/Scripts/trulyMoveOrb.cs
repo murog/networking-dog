@@ -22,6 +22,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	private bool outtaBounds = false;
 	private bool outtaBoundsPos;
 	public Text textKlout;
+	public Text wiggle;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
@@ -103,6 +104,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 				positiveCollision = true;
 				GM.kloutCount += 1;
 				UpdateTextScore (GM.kloutCount);
+				wiggleWiggle ();
 			} else if (other.gameObject.tag == "exit") {
 				print ("this is the exit huh");
 				status = "exit";
@@ -121,6 +123,10 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 
 	void UpdateTextScore(int currentScore) {
 			textKlout.text = string.Format ("KLOUT: {0}", currentScore);
+	}
+	
+	void wiggleWiggle () {
+			wiggle.transform.Rotate (0, 0, 10);
 	}
 			
 

@@ -6245,13 +6245,13 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 504134802}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.04993436, y: 0.0038503897, z: -0.0908673, w: 0.9946029}
   m_LocalPosition: {x: 0, y: 0, z: 0.000002861023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 788932590}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -5.6600003, y: 0.96400005, z: -10.488001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 250, y: 20}
@@ -12775,7 +12775,7 @@ GameObject:
   - component: {fileID: 1348033815}
   - component: {fileID: 1348033814}
   m_Layer: 5
-  m_Name: Text
+  m_Name: wiggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15660,6 +15660,11 @@ Prefab:
       propertyPath: textKlout
       value: 
       objectReference: {fileID: 504134803}
+    - target: {fileID: 114450555284024048, guid: 5b590bffeb4b04cc78ae959fa194df61,
+        type: 2}
+      propertyPath: wiggle
+      value: 
+      objectReference: {fileID: 1348033814}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b590bffeb4b04cc78ae959fa194df61, type: 2}
   m_IsPrefabParent: 0

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; //do i need this if i have line 3
+using UnityEngine.UI;
 
 namespace NetworkingDog {
 	
@@ -20,6 +21,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	public static bool positiveCollision = false;
 	private bool outtaBounds = false;
 	private bool outtaBoundsPos;
+	public Text textKlout;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
@@ -61,7 +63,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 			print ("right");
 		} 
 		rb.velocity = new Vector3 (horizVel, 0, 0);
-
+		
 
 //		GetComponent<Rigidbody>().velocity = new Vector3 (horizVel, 0, 0);
 //		if ((Input.GetKeyDown (moveL)) && (laneNum > 1) && (!controlBlocked)) {
@@ -100,6 +102,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 			} else if (other.gameObject.tag == "klout") {
 				positiveCollision = true;
 				GM.kloutCount += 1;
+				UpdateTextScore (GM.kloutCount);
 			} else if (other.gameObject.tag == "exit") {
 				print ("this is the exit huh");
 				status = "exit";
@@ -114,6 +117,10 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 			GM.kloutCount += 1;
 //			print (GM.kloutCount);
 		} 
+	}
+
+	void UpdateTextScore(int currentScore) {
+			textKlout.text = string.Format ("KLOUT: {0}", currentScore);
 	}
 			
 

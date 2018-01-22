@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\stats.cs" />
      <Compile Include="Assets\Scripts\textZoomIn.cs" />
      <Compile Include="Assets\Scripts\trulyMoveOrb.cs" />
+     <Compile Include="Assets\Scripts\UIManager.cs" />
      <None Include="Assets\Fonts\Work-Sans-master\LICENSE.txt" />
      <None Include="Assets\Fonts\Work-Sans-master\sources\BUILD.txt" />
      <None Include="Assets\Fonts\Roboto_Mono\LICENSE.txt" />

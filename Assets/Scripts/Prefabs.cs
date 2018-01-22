@@ -10,6 +10,7 @@ namespace NetworkingDog {
 	private static Object[] construction;
 	private static Object[] streetLamps;
 	private static Object[] positive;
+	private static Object[] negative;
 
 	// Use this for initialization
 	void Start () {
@@ -35,7 +36,9 @@ namespace NetworkingDog {
 //			}
 			streetLamps = Resources.LoadAll ("PROPS_ENVIRONMENT/street_lamps", typeof(GameObject)) as Object[];
 			positive = Resources.LoadAll ("encounters/positive", typeof(GameObject)) as Object[];
-			foreach (var item in positive) {
+
+			negative = Resources.LoadAll ("encounters/negative", typeof(GameObject)) as Object[]; 
+			foreach (var item in negative) {
 				print (item);
 			}
 //			print(RandomTree ());
@@ -87,6 +90,12 @@ namespace NetworkingDog {
 		var index = Random.Range(0, positive.Length);
 		var rando = positive [index];
 		return rando;	
+	}
+
+	public static Object RandomNegative() {
+		var index = Random.Range (0, negative.Length);
+		var rando = negative [index];
+		return rando;
 	}
 
 

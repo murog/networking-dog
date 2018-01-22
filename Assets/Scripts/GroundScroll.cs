@@ -62,6 +62,7 @@ namespace NetworkingDog
 
 		private void SpawnSidewalk (float z_offset) {
 			spawnedSidewalk = Instantiate(sidewalk, new Vector3(0, 0, z_offset * 100), Quaternion.identity);
+			spawnCount++;
 			if (z_offset == 0) {
 //				Vector3 playerSpawn = new Vector3 (spawnedSidewalk.transform.position.x, spawnedSidewalk.transform.position.y + 1, spawnedSidewalk.transform.position.z);
 //				Instantiate (player, playerSpawn, Quaternion.identity);
@@ -71,9 +72,10 @@ namespace NetworkingDog
 			SpawnRandomItems (spawnedSidewalk);
 			SpawnRandomStreetItems (spawnedSidewalk);
 			SpawnPositive (spawnedSidewalk);
-			spawnCount++;
+			SpawnNegative (spawnedSidewalk);
 			print ("the sidewalk position is");
 			print(spawnedSidewalk.transform.position);
+
 		}
 
 		private void SpawnTrees (Transform parentSidewalk) {
@@ -140,6 +142,28 @@ namespace NetworkingDog
 					(Instantiate (random_positive, randPosition, randRotation)).transform.parent = parentSidewalk;
 				}
 
+			}
+		}
+
+		private void SpawnNegative(Transform parentSidewalk) {
+			for (float offset = -49; offset < 50; offset += 13) {
+				float x_pos;
+				Quaternion randRotation;
+				float randNum = Random.Range (0, 100);
+				if (randNum > 40) {
+					GameObject random_negative = Prefabs.RandomNegative () as GameObject;
+					if (randNum % 2 == 0) {
+						float rand_x = Random.Range (0, 5);
+						x_pos = rand_x;
+						randRotation = Quaternion.Euler (0, 180, 0);
+					} else {
+						float rand_x = Random.Range (-5, 5);
+						x_pos = rand_x;
+						randRotation = Quaternion.identity;
+					}
+					Vector3 randPosition = new Vector3 (x_pos, parentSidewalk.transform.position.y + 2.25f, parentSidewalk.transform.position.z + offset);
+					(Instantiate (random_negative, randPosition, randRotation)).transform.parent = parentSidewalk;
+				}
 			}
 		}
 

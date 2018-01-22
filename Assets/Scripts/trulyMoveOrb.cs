@@ -23,6 +23,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	private bool outtaBoundsPos;
 	public Text textKlout;
 	public Text wiggle;
+	private bool wigglin = false;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
@@ -104,14 +105,22 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 				positiveCollision = true;
 				GM.kloutCount += 1;
 				UpdateTextScore (GM.kloutCount);
-				wiggleWiggle ();
+				if (!wigglin) {
+					wiggleWiggle ();
+				}
 			} else if (other.gameObject.tag == "exit") {
 				print ("this is the exit huh");
 				status = "exit";
 			} else if (other.gameObject.tag == "sidewalk") {
-				Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
+				Physics.IgnoreCollision (other.collider, GetComponent<Collider> ());
+			} else if (other.gameObject.tag == "garbage") {
+				print ("its garbage");
+				Destroy (other.gameObject);
+				GM.kloutCount -= 5;
+				if (GM.kloutCount < 0) {
+					status = "exit";
+				}
 			}
-
 	}
 
 	void OnCollisionStay(Collision other) {
@@ -125,8 +134,12 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 			textKlout.text = string.Format ("KLOUT: {0}", currentScore);
 	}
 	
-	void wiggleWiggle () {
-			wiggle.transform.Rotate (0, 0, 10);
+	IEnumerator wiggleWiggle () {
+			wigglin = true;
+			wiggle.transform.Rotate (0, 0, 100);
+			yield return new WaitForSeconds (3.0f);
+			wiggle.transform.Rotate (0, 0, -100);
+			wigglin = false;
 	}
 			
 
@@ -139,16 +152,39 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	}
 
 	IEnumerator outOfBounds() 
-	{
+	{	
+		StartCoroutine (WhereUGoing());
 		yield return new WaitForSeconds (3.5f);
 			if ((transform.position.x > 5 || transform.position.x < -5) && ((outtaBoundsPos == (transform.position.x > 0)))) {
 				print ("hey u lost");
+				wiggle.text = "hey u lost";
 				status = "exit";
 			} else {
 				print ("ok ur cool");
+				wiggle.text = "ok ur cool";
+				wiggle.fontSize = 80;
+				wiggle.transform.Rotate (0, 0, -150);
 				status = "cool";
 				outtaBounds = false;
+				yield return new WaitForSeconds (0.5f);
+				wiggle.text = "wiggle wiggle";
+				wiggle.fontSize = 40;
+				wiggle.transform.rotation = new Quaternion (0, 0, 0, 0);
+
 			}
+	}
+	
+	IEnumerator WhereUGoing()
+	{
+		wiggle.text = "where u going?";
+		wiggle.transform.Rotate (0, 0, 50);
+		yield return new WaitForSeconds(1.5f);
+			if ((transform.position.x > 5 || transform.position.x < -5) && ((outtaBoundsPos == (transform.position.x > 0)))) {
+				wiggle.text = "hey come back here";
+				wiggle.transform.Rotate (0, 0, 100);
+			} 
+				
+
 	}
 }
 }

@@ -62,13 +62,13 @@ public class startScreen : MonoBehaviour {
 			freezeMovement = true;
 			rb.velocity = new Vector3 (0, 0, 0);
 			startRotation = transform.rotation;
-			endRotation =	Quaternion.Euler (3, 180, 0);
+			endRotation =	Quaternion.Euler (0, 180, 0);
 //			pug.transform.position = new Vector3(0, 0, 20);
 //			downRotation = Quaternion.Euler (40, 0, 0);
 
 			doPanning = true;
 			pug.gameObject.SetActive (true);
-			pug.gameObject.transform.position = new Vector3 (0, 0, 20);
+			pug.gameObject.transform.position = new Vector3 (0, 0.1f, 20);
 			waitToLoad += Time.deltaTime;
 		}
 //		if (waitToLoad > 0) {
@@ -82,7 +82,7 @@ public class startScreen : MonoBehaviour {
 		if (doPanning) {
 			transform.rotation = Quaternion.Slerp (startRotation, endRotation, Time.deltaTime * 2);
 			print (transform.rotation);
-			if (transform.rotation == new Quaternion(0, -1.0f, 0.3f, 0)) {
+			if (transform.rotation == new Quaternion(0, -1.0f, 0, 0)) {
 				doPanning = false;
 				print ("do panning is" + doPanning.ToString ());
 //				startRotation = transform.rotation;

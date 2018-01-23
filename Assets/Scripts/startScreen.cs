@@ -94,8 +94,9 @@ public class startScreen : MonoBehaviour {
 		}
 		if (doZoom) {
 //			transform.rotation = Quaternion.Lerp (startRotation, endRotation, Time.deltaTime);
-			Camera.main.fieldOfView = Mathf.Lerp(startFOV, zoomInFOV, Time.deltaTime);
-			if (Camera.main.fieldOfView == zoomInFOV) {
+			Camera.main.fieldOfView = Mathf.Lerp(startFOV, zoomInFOV, Time.deltaTime * 2);
+			print (Camera.main.fieldOfView);
+			if (Camera.main.fieldOfView < 20.5f) {
 				doZoom = false;
 				SceneManager.LoadScene ("Sidewalk");
 

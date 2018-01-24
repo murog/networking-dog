@@ -46,19 +46,15 @@ public class moveCam : MonoBehaviour {
 					doMove = true;
 					transform.DetachChildren ();
 				}
-
-//				startPosition = transform.position;
-//				endPosition = new Vector3 (4, startPosition.y, startPosition.z);
+					
 				if (pug.transform.position.z < 6.8 && !doRotate) {
 					rb_pug.velocity = new Vector3 (0, 0, 1);
 				} else if (!doRotate) {
-//					doRotate = true;
+					doRotate = true;
 					rb_pug.velocity = new Vector3 (0, 0, 0);
 					startRotation = pug.transform.rotation;
-					endRotation =	new Quaternion (0, 0, 0, 0);
-					doZoom = true;
-					startFOV = Camera.main.fieldOfView;
-					zoomInFOV = 30;
+					endRotation =	new Quaternion (0, 1, 0, 0);
+
 				}
 
 				if (doRotate) {

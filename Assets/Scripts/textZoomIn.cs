@@ -9,6 +9,9 @@ public class textZoomIn : MonoBehaviour {
 //	public GUIText kloutText;
 	public KeyCode restart;
 	private string count;
+	private float x_pos = 0;
+	private float y_pos = 0;
+	private float z_pos = 0;
 	
 //	private GameObject[] trueConnections;
 	// Use this for initialization
@@ -34,9 +37,18 @@ public class textZoomIn : MonoBehaviour {
 				print (name);
 				print (GM.connections [name]);
 				GameObject person = Prefabs.ReturnPositive (name) as GameObject; 
-				for (int i = 1; i <= GM.connections [name]; i++) {
-					var position = new Vector3 (0, 0, 0);
-					Instantiate (person, position, Quaternion.identity);
+				if (person) {
+					for (int i = 1; i <= GM.connections [name]; i++) {
+						var position = new Vector3 (x_pos, y_pos, z_pos);
+						Instantiate (person, position, Quaternion.identity);
+						if (x_pos > 20) {
+							x_pos = 0;
+//							z_pos += 5;
+							y_pos += 2;
+						} else {
+							x_pos += 5;
+						}
+					}
 				}
 			}
 	}

@@ -11,6 +11,8 @@ namespace NetworkingDog {
 	private static Object[] streetLamps;
 	private static Object[] positive;
 	private static Object[] negative;
+	private static Object r_person;
+
 
 	// Use this for initialization
 	void Start () {
@@ -96,6 +98,16 @@ namespace NetworkingDog {
 		var index = Random.Range (0, negative.Length);
 		var rando = negative [index];
 		return rando;
+	}
+	
+	public static Object ReturnPositive(string name) {
+			foreach (Object person in positive) {
+				if (person.name == name.Substring(0, name.Length - 7)) {
+					r_person = person;
+				}
+			}
+			return r_person;
+//			return null;
 	}
 
 

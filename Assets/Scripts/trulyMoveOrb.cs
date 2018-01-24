@@ -24,6 +24,10 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	public Text textKlout;
 	public Text wiggle;
 	private bool wigglin = false;
+	public Transform pug;
+//	public static GameObject[] connections;
+//	public static ArrayList connections; 
+	public static List<GameObject> connections = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
@@ -105,9 +109,20 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 				positiveCollision = true;
 				GM.kloutCount += 1;
 				UpdateTextScore (GM.kloutCount);
+//				A.add (connections, other.gameObject);
+//				connections.Add (other.gameObject);
+				GM.Network(other.gameObject.name);
+				print ("the last item in list is");
+				if (GM.connections.Count > 0) {
+					print (connections [GM.connections.Count - 1]);
+				} else {
+					print ("nothing in here rn");
+				}
+
 				if (!wigglin) {
 					wiggleWiggle ();
 				}
+
 			} else if (other.gameObject.tag == "exit") {
 				print ("this is the exit huh");
 				status = "exit";
@@ -186,5 +201,7 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 				
 
 	}
+
+
 }
 }

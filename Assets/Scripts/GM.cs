@@ -10,6 +10,8 @@ public class GM : MonoBehaviour {
 	public static int timeCount;
 	public Transform dawg;
 	private Animator animator;
+	public static Dictionary<string, int> connections = new Dictionary<string, int> ();
+
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,14 @@ public class GM : MonoBehaviour {
 //				animator.SetBool("bark", true);
 				print ("tried to bark rn");
 				trulyMoveOrb.positiveCollision = false;
+			}
+	}
+
+	public static void Network(string name) {
+			if (!connections.ContainsKey (name)) {
+				connections[name] = 1;
+			} else {
+				connections[name] = connections[name] + 1;
 			}
 	}
 	}

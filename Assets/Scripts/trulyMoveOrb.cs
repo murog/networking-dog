@@ -28,6 +28,8 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 //	public static GameObject[] connections;
 //	public static ArrayList connections; 
 	public static List<GameObject> connections = new List<GameObject>();
+	public static bool doZoom = false;
+	public static bool gameEnd = false;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
@@ -92,12 +94,20 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 //			waitToLoad += Time.deltaTime;
 //		}
 		if (status == "exit") {
-			SceneManager.LoadScene ("LevelComplete");
+//				float startFOV = Camera.main.fieldOfView;
+//				float zoomInFOV = 30;
+//			Camera.main.fieldOfView = Mathf.Lerp(startFOV, zoomInFOV, Time.deltaTime * 2);
+//			print (Camera.main.fieldOfView);
+//			if (Camera.main.fieldOfView < 30.5f) {
+//				doZoom = true;
+			gameEnd = true;
+			}
+//			SceneManager.LoadScene ("LevelComplete");
 		} 
 //		print (controlBlocked);
 //		playerPosition = transform.position.z;
 			
-	}
+
 
 	void OnCollisionEnter(Collision other)
 	{	

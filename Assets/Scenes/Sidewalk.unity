@@ -10991,6 +10991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   networkingDog: {fileID: 0}
+  pug: {fileID: 80249161}
 --- !u!54 &786026531
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14769,6 +14770,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1775650382}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1778762430 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 143998, guid: aef575d7efd75c142849e3662737fe34, type: 2}
+  m_PrefabInternal: {fileID: 110217682}
+--- !u!65 &1778762432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1778762430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.5, z: 0}
+  m_Center: {x: 0, y: 1, z: 2}
 --- !u!1 &1779498400
 GameObject:
   m_ObjectHideFlags: 0
@@ -14937,8 +14954,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2, z: 1}
-  m_Center: {x: 0, y: 0.7, z: 4}
+  m_Size: {x: 2.5, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &1796247619
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14947,7 +14964,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1796247611}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 3
   m_Direction: 0
@@ -15995,7 +16012,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4893256099471396, guid: 5b590bffeb4b04cc78ae959fa194df61, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4893256099471396, guid: 5b590bffeb4b04cc78ae959fa194df61, type: 2}
       propertyPath: m_LocalRotation.x
@@ -16044,22 +16061,22 @@ Prefab:
     - target: {fileID: 135150635100356702, guid: 5b590bffeb4b04cc78ae959fa194df61,
         type: 2}
       propertyPath: m_Center.y
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 135150635100356702, guid: 5b590bffeb4b04cc78ae959fa194df61,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23675530645364646, guid: 5b590bffeb4b04cc78ae959fa194df61,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 54278138551317384, guid: 5b590bffeb4b04cc78ae959fa194df61,
         type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 54278138551317384, guid: 5b590bffeb4b04cc78ae959fa194df61,
         type: 2}

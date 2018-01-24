@@ -40,7 +40,7 @@ public class textZoomIn : MonoBehaviour {
 				if (person) {
 					for (int i = 1; i <= GM.connections [name]; i++) {
 						var position = new Vector3 (x_pos, y_pos, z_pos);
-						Instantiate (person, position, Quaternion.identity);
+						GameObject body = Instantiate (person, position, Quaternion.identity);
 						if (x_pos > 20) {
 							x_pos = 0;
 //							z_pos += 5;

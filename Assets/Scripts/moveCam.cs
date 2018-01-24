@@ -4,22 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 namespace NetworkingDog {
 public class moveCam : MonoBehaviour {
+	private Rigidbody rb;
 	public GameObject networkingDog;
-//	public Transform player;
 	private Vector3 offset;
-	private Quaternion startRotation;
+	private Vector3 startRotation;
 	private Quaternion endRotation;
-	private bool doPanning = false;
 	private Vector3 startPosition;
 	private Vector3 endPosition;
 	private float startFOV;
 	private float zoomInFOV;
 	private bool doZoom = false;
-	private Rigidbody rb;
 	private bool doRotate = false;
-	public Transform pug;
 	private bool doMove = false;
+	public Transform pug;
 	private Rigidbody rb_pug;
+	private float waittoload = 0;
 	// Use this for initialization
 	void Start () {
 		networkingDog = GameObject.Find("networkingDog");
@@ -29,7 +28,7 @@ public class moveCam : MonoBehaviour {
 		offset = transform.position - networkingDog.transform.position;
 		print (offset);
 		rb = GetComponent<Rigidbody> ();	
-		startRotation = transform.rotation;
+//		startRotation = transform.rotation;
 
 	}
 	
@@ -39,37 +38,63 @@ public class moveCam : MonoBehaviour {
 				transform.position = networkingDog.transform.position + offset;
 			}
 			if (trulyMoveOrb.gameEnd) {
-//				transform.DetachChildren ();
 				if (!doMove) {
 					rb_pug = pug.gameObject.AddComponent (typeof(Rigidbody)) as Rigidbody;
 					rb_pug.useGravity = false;
 					doMove = true;
 					transform.DetachChildren ();
+					print ("line 45");
 				}
 					
 				if (pug.transform.position.z < 6.8 && !doRotate) {
 					rb_pug.velocity = new Vector3 (0, 0, 1);
+					print ("line 49");
 				} else if (!doRotate) {
 					doRotate = true;
 					rb_pug.velocity = new Vector3 (0, 0, 0);
-					startRotation = pug.transform.rotation;
-					endRotation =	new Quaternion (0, 1, 0, 0);
-
+					startRotation = pug.transform.eulerAngles;
+//					endRotation =	new Quaternion (0, 1, 0, 0);
+//					endRotation = Quaternion.Euler(30, 180, 0);
+					print ("line 55");
+				
 				}
 
 				if (doRotate) {
-					pug.transform.rotation = Quaternion.Slerp (startRotation, endRotation, Time.deltaTime * 2);
-					print ("*****************rotating*****************");
-					print ("the velocity is " + rb.velocity.ToString());
-					print ("the start rotation is " + startRotation.ToString ());
-					print ("the end rotation is " + endRotation.ToString ());
-					print ("the current rotation is " + transform.rotation);
-					if (transform.rotation == new Quaternion (0, -1.0f, 0, 0)) {
+//					var step = Time.deltaTime * 2;
+//					pug.transform.Rotate = Quaternion.Lerp (startRotation, endRotation, step);
+//					pug.transform.eulerAngles = new Vector3(
+//						Mathf.LerpAngle(startRotation.x, 30, Time.deltaTime),
+//						Mathf.LerpAngle(startRotation.y, 180, Time.deltaTime),
+//						Mathf.LerpAngle(startRotation.z, 0, Time.deltaTime));
+////					print ("****** the step is " + step.ToString());
+//					print ("*****************rotating*****************");
+//					print ("the velocity is " + rb_pug.velocity.ToString());
+//					print ("the start rotation is " + startRotation.ToString ());
+//					print ("the end rotation is " + endRotation.ToString ());
+//					print ("the current rotation is " + pug.transform.eulerAngles);
+					pug.GetChild(pug.childCount - 1).gameObject.SetActive(true);
+					pug.transform.rotation = Quaternion.Euler (-10, 180, 0);
+					waittoload += Time.deltaTime;
+
+					if (pug.transform.eulerAngles.y == 180 && waittoload > 3.5f) {
+						transform.rotation = Quaternion.Euler (-1, 0, 0);
 						doRotate = false;
 						startFOV = Camera.main.fieldOfView;
 						zoomInFOV = 30;
 						doZoom = true;
 					}
+//					pug.transform.rotation = Quaternion.Slerp (startRotation, endRotation, Time.deltaTime * 2);
+//					print ("*****************rotating*****************");
+//					print ("the velocity is " + rb.velocity.ToString());
+//					print ("the start rotation is " + startRotation.ToString ());
+//					print ("the end rotation is " + endRotation.ToString ());
+//					print ("the current rotation is " + transform.rotation);
+//					if (transform.rotation == new Quaternion (0, -1.0f, 0, 0)) {
+//						doRotate = false;
+//						startFOV = Camera.main.fieldOfView;
+//						zoomInFOV = 30;
+//						doZoom = true;
+//					}
 				}
 				if (doZoom) {
 					Camera.main.fieldOfView = Mathf.Lerp(startFOV, zoomInFOV, Time.deltaTime * 2);
@@ -79,38 +104,10 @@ public class moveCam : MonoBehaviour {
 					}
 				}
 
-			//		if (waitToLoad > 5) {
-			//			SceneManager.LoadScene ("Sidewalk");
-			//		}
 
-//				float startFOV = Camera.main.fieldOfView;
-//				float zoomInFOV = 30;
-//				Camera.main.fieldOfView = Mathf.Lerp(startFOV, zoomInFOV, Time.deltaTime * 2);
-//				print (Camera.main.fieldOfView);
-//				if (Camera.main.fieldOfView < 30.5f) {
-//					doZoom = true;
-//				}
-
-//			if (doPanning) {
-////				transform.rotation = Quaternion.Slerp (startRotation, endRotation, Time.deltaTime * 2);
-////				transform.position = Vector3.Lerp(startPosition, endPosition, Time.deltaTime * 2);
-//				rb.velocity = new Vector3 (5, 0, 0);
-//				print (transform.rotation);
-//					if ((transform.rotation == new Quaternion(0, -1.0f, 0, 0)) && transform.position.z > 3.8) {
-//					doPanning = false;
-//					rb.velocity = new Vector3 (0, 0, 0);
-//					print ("do panning is" + doPanning.ToString ());
-//					SceneManager.LoadScene ("LevelComplete");
-//
-//					//				startRotation = transform.rotation;
-//					//				endRotation = 
-//				}
-//			}
 			}
 		
 	}
-//		IEnumerator RotateCamera() {
-//			
-//		}
+
 }
 }

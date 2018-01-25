@@ -28,6 +28,7 @@ public class startScreen : MonoBehaviour {
 	public float smooth;
 	private bool freezeMovement = false;
 	public KeyCode start;
+	public Transform directionsText;
 
 	// Use this for initialization
 	void Start () {
@@ -49,6 +50,7 @@ public class startScreen : MonoBehaviour {
 			transform.Rotate (v, h, 0);
 		}
 		if (Input.GetMouseButtonDown (0)) {
+			directionsText.gameObject.SetActive (false);
 			gameStart = true;
 			restoreRotation = true;
 //			transform.Rotate (0, -h, 0);

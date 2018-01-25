@@ -9,7 +9,7 @@ namespace NetworkingDog {
 public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 	public KeyCode moveL;
 	public KeyCode moveR;
-	public float horizVel = 0;
+	private float horizVel;
 	public float laneNum = 2.0f;
 	public bool controlBlocked = false;
 	private float waitToLoad;
@@ -36,9 +36,9 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 			int num = Random.Range (1, 3);
 			print("the number is " + num.ToString());
 			if (num % 2 == 0) {
-				horizVel = 1f;
+				horizVel = 4.0f;
 			} else {
-				horizVel = -1f;
+				horizVel = -4.0f;
 			}
 			doZoom = false;
 			gameEnd = false;
@@ -61,18 +61,18 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 		}
 			
 		if (Input.GetKeyDown (moveL)) {
-			if (horizVel < 5.5) {
-				horizVel++;
+			if (horizVel < 11.5) {
+				horizVel += 3.5f;
 				if (horizVel == 0) {
-				horizVel++;
+				horizVel += 3.5f;
 				}
 			}
 			print ("left");
 		} else if (Input.GetKeyDown (moveR)) {
-			if (horizVel > -5.5) {
-				horizVel--;
+			if (horizVel > -11.5) {
+				horizVel -= 3.5f;
 				if (horizVel == 0) {
-					horizVel--;
+					horizVel -= 3.5f;
 				}
 			}	
 			print ("right");

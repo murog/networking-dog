@@ -40,6 +40,13 @@ public class trulyMoveOrb : Singleton<trulyMoveOrb> {
 			} else {
 				horizVel = -1f;
 			}
+			doZoom = false;
+			gameEnd = false;
+			status = null;
+			outtaBounds = false;
+			controlBlocked = false;
+			positiveCollision = false;
+			wigglin = false;
 
 	}
 //	TODO: FLY AWAY BEHIND THEMSELVES,

@@ -10,11 +10,13 @@ public class GM : MonoBehaviour {
 	public static int timeCount;
 	public Transform dawg;
 	private Animator animator;
-	public static Dictionary<string, int> connections = new Dictionary<string, int> ();
+	public static Dictionary<string, int> connections;
 
 
 	// Use this for initialization
 	void Start () {
+		connections = new Dictionary<string, int> ();
+
 //		animator = dawg.GetComponent<Animator> ();	
 	}
 	
@@ -33,6 +35,12 @@ public class GM : MonoBehaviour {
 			} else {
 				connections[name] = connections[name] + 1;
 			}
+	}
+
+	public static void ResetGame() {
+			kloutCount = 0;
+			GroundScroll.StartGround ();
+
 	}
 	}
 }

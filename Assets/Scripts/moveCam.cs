@@ -19,7 +19,7 @@ public class moveCam : MonoBehaviour {
 	public Transform pug;
 	private Rigidbody rb_pug;
 	private float waittoload = 0;
-	private Animation anim_pug;
+	private Animator anim_pug;
 	// Use this for initialization
 	void Start () {
 		networkingDog = GameObject.Find("networkingDog");
@@ -81,7 +81,8 @@ public class moveCam : MonoBehaviour {
 					waittoload += Time.deltaTime;
 
 					if (pug.transform.eulerAngles.y == 180) {
-						
+//						anim_pug.Play("bark");
+						anim_pug.enabled = false;
 //						transform.rotation = Quaternion.Euler (-1, 0, 0);
 						if (waittoload > 1.5f) {
 							doRotate = false;
@@ -110,6 +111,8 @@ public class moveCam : MonoBehaviour {
 					Camera.main.fieldOfView = Mathf.Lerp(startFOV, zoomInFOV, Time.deltaTime * 2);
 					if (Camera.main.fieldOfView < 30.5f) {
 						doZoom = false;
+						doMove = false;
+						doRotate = false;
 						SceneManager.LoadScene ("LevelComplete");
 					}
 				}

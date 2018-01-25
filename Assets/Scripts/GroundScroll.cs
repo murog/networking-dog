@@ -175,6 +175,9 @@ namespace NetworkingDog
 		public static void StopGround(){
 			stopGround = true;
 		}
+		public static void StartGround() {
+			stopGround = false;
+		}
 
 //		private void SpawnItems(Transform parentSidewalk, Object[] array, float offset, float increment, float x_offset, float y_offset, float z_offset) {
 //			for (float i = -offset; i < offset; offset += increment) {

@@ -61,6 +61,7 @@ public class textZoomIn : MonoBehaviour {
 			transform.Rotate (3, 0, 0);
 		}
 		if (Input.GetKeyDown(restart)) {
+			GM.ResetGame ();
 			SceneManager.LoadScene ("Sidewalk");
 		} 
 

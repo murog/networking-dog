@@ -27,12 +27,16 @@ public class startScreen : MonoBehaviour {
 	public float zoomInFOV;
 	public float smooth;
 	private bool freezeMovement = false;
+	public KeyCode start;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 		originalRotation = transform.rotation;
 		countDown = GetComponent<GUIText> ();
 		pug.gameObject.SetActive (false);
+		startFOV = Camera.main.fieldOfView;
+		zoomInFOV = 20;
 //		endRotation = new Quaternion (0, 0, 1, 0);
 	}
 	
@@ -50,7 +54,7 @@ public class startScreen : MonoBehaviour {
 //			transform.Rotate (0, -h, 0);
 		}
 		if (restoreRotation && !freezeMovement) {
-			transform.rotation = Quaternion.Lerp(transform.rotation,originalRotation,Time.time * resetSpeed);
+			transform.rotation = Quaternion.Lerp (transform.rotation, originalRotation, Time.time * resetSpeed);
 		}
 		if (transform.rotation == originalRotation) {
 			restoreRotation = false;
@@ -71,30 +75,20 @@ public class startScreen : MonoBehaviour {
 			pug.gameObject.transform.position = new Vector3 (0, 0.1f, 20);
 			waitToLoad += Time.deltaTime;
 		}
-//		if (waitToLoad > 0) {
-//			countDown.text = "get ready";
-//		}
-
-//		if (waitToLoad > 5) {
-//			SceneManager.LoadScene ("Sidewalk");
-//		}
 
 		if (doPanning) {
 			transform.rotation = Quaternion.Slerp (startRotation, endRotation, Time.deltaTime * 2);
 			print (transform.rotation);
-			if (transform.rotation == new Quaternion(0, -1.0f, 0, 0)) {
+			if (transform.eulerAngles.y > 178 && Input.GetKey (start) && doPanning) {
 				doPanning = false;
-				print ("do panning is" + doPanning.ToString ());
-//				startRotation = transform.rotation;
-//				endRotation = 
-					doZoom = true;
-					startFOV = Camera.main.fieldOfView;
-					zoomInFOV = 20;
-				}
+				startFOV = Camera.main.fieldOfView;
+				zoomInFOV = 20;
+				doZoom = true;
+//				StartCoroutine (Zooming ());
+			}
 		}
-		if (doZoom) {
-//			transform.rotation = Quaternion.Lerp (startRotation, endRotation, Time.deltaTime);
-			Camera.main.fieldOfView = Mathf.Lerp(startFOV, zoomInFOV, Time.deltaTime * 2);
+		if (doZoom && !doPanning) {
+			Camera.main.fieldOfView = Mathf.Lerp (startFOV, zoomInFOV, Time.deltaTime * 2);
 			print (Camera.main.fieldOfView);
 			if (Camera.main.fieldOfView < 20.5f) {
 				doZoom = false;
@@ -103,5 +97,8 @@ public class startScreen : MonoBehaviour {
 			}
 		}
 	}
+
 		
-}
+	}
+		
+

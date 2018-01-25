@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LevelComplete.unity
-    guid: 65af588727607469ba885418c38e2efd
+    path: Assets/Scenes/Start Screen.unity
+    guid: da6574715eba845d3948d8dfcb020b21
   - enabled: 1
     path: Assets/Scenes/Sidewalk.unity
     guid: b0e80de2731b448ef8264c240325018f
+  - enabled: 1
+    path: Assets/Scenes/LevelComplete.unity
+    guid: 65af588727607469ba885418c38e2efd

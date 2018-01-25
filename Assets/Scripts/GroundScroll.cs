@@ -29,6 +29,7 @@ namespace NetworkingDog
 		private GameObject rando_item;
 		private GameObject rando_street_item;
 		private int spawnCount = 0;
+		private static bool stopGround = false;
 
 
 
@@ -45,7 +46,11 @@ namespace NetworkingDog
 
 		void Update()
 		{	
-			ground_speed = set_speed;
+			if (!stopGround) {
+				ground_speed = set_speed;
+			} else {
+				ground_speed = 0;
+			}
 			if (garbage.spawnable) {
 				SpawnSidewalk (3);
 				garbage.spawnable = false;
@@ -72,7 +77,7 @@ namespace NetworkingDog
 			SpawnRandomItems (spawnedSidewalk);
 			SpawnRandomStreetItems (spawnedSidewalk);
 			SpawnPositive (spawnedSidewalk);
-			SpawnNegative (spawnedSidewalk);
+//			SpawnNegative (spawnedSidewalk);
 			print ("the sidewalk position is");
 			print(spawnedSidewalk.transform.position);
 
@@ -165,6 +170,10 @@ namespace NetworkingDog
 					(Instantiate (random_negative, randPosition, randRotation)).transform.parent = parentSidewalk;
 				}
 			}
+		}
+
+		public static void StopGround(){
+			stopGround = true;
 		}
 
 //		private void SpawnItems(Transform parentSidewalk, Object[] array, float offset, float increment, float x_offset, float y_offset, float z_offset) {

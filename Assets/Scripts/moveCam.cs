@@ -7,7 +7,7 @@ public class moveCam : MonoBehaviour {
 	private Rigidbody rb;
 	public GameObject networkingDog;
 	private Vector3 offset;
-	private Vector3 startRotation;
+	private Quaternion startRotation;
 	private Quaternion endRotation;
 	private Vector3 startPosition;
 	private Vector3 endPosition;
@@ -19,6 +19,7 @@ public class moveCam : MonoBehaviour {
 	public Transform pug;
 	private Rigidbody rb_pug;
 	private float waittoload = 0;
+	private Animation anim_pug;
 	// Use this for initialization
 	void Start () {
 		networkingDog = GameObject.Find("networkingDog");
@@ -27,7 +28,8 @@ public class moveCam : MonoBehaviour {
 		}
 		offset = transform.position - networkingDog.transform.position;
 		print (offset);
-		rb = GetComponent<Rigidbody> ();	
+		rb = GetComponent<Rigidbody> ();
+		anim_pug = pug.GetComponent<Animator>();
 //		startRotation = transform.rotation;
 
 	}
@@ -39,6 +41,7 @@ public class moveCam : MonoBehaviour {
 			}
 			if (trulyMoveOrb.gameEnd) {
 				if (!doMove) {
+					GroundScroll.StopGround ();
 					rb_pug = pug.gameObject.AddComponent (typeof(Rigidbody)) as Rigidbody;
 					rb_pug.useGravity = false;
 					doMove = true;
@@ -46,13 +49,14 @@ public class moveCam : MonoBehaviour {
 					print ("line 45");
 				}
 					
-				if (pug.transform.position.z < 6.8 && !doRotate) {
-					rb_pug.velocity = new Vector3 (0, 0, 1);
+				if (pug.transform.position.z < 3.8 && !doRotate) {
+					
+					rb_pug.velocity = new Vector3 (0, 0, 2);
 					print ("line 49");
 				} else if (!doRotate) {
 					doRotate = true;
 					rb_pug.velocity = new Vector3 (0, 0, 0);
-					startRotation = pug.transform.eulerAngles;
+//					startRotation = pug.transform.eulerAngles;
 //					endRotation =	new Quaternion (0, 1, 0, 0);
 //					endRotation = Quaternion.Euler(30, 180, 0);
 					print ("line 55");
@@ -76,12 +80,17 @@ public class moveCam : MonoBehaviour {
 					pug.transform.rotation = Quaternion.Euler (-10, 180, 0);
 					waittoload += Time.deltaTime;
 
-					if (pug.transform.eulerAngles.y == 180 && waittoload > 3.5f) {
-						transform.rotation = Quaternion.Euler (-1, 0, 0);
-						doRotate = false;
-						startFOV = Camera.main.fieldOfView;
-						zoomInFOV = 30;
-						doZoom = true;
+					if (pug.transform.eulerAngles.y == 180) {
+						
+//						transform.rotation = Quaternion.Euler (-1, 0, 0);
+						if (waittoload > 1.5f) {
+							doRotate = false;
+							startFOV = Camera.main.fieldOfView;
+							zoomInFOV = 30;
+							doZoom = true;
+							startRotation = transform.rotation;
+							endRotation = Quaternion.Euler (-1, 0, 0);
+						}
 					}
 //					pug.transform.rotation = Quaternion.Slerp (startRotation, endRotation, Time.deltaTime * 2);
 //					print ("*****************rotating*****************");
@@ -97,6 +106,7 @@ public class moveCam : MonoBehaviour {
 //					}
 				}
 				if (doZoom) {
+					transform.rotation = Quaternion.Slerp (startRotation, endRotation, Time.deltaTime * 2);
 					Camera.main.fieldOfView = Mathf.Lerp(startFOV, zoomInFOV, Time.deltaTime * 2);
 					if (Camera.main.fieldOfView < 30.5f) {
 						doZoom = false;

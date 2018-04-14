@@ -1,11 +1,26 @@
 # networking-dog
 An endless runner game following a small dog trying to gain social media klout through networking on a procedurally generated sidewalk.  Created as a Capstone Project for Ada Developers Academy.
 
-# Capstone Concept - Guillermina Muro
+## Capstone Concept 
 ![networking-dog](https://i.imgur.com/kq7vcyj.png)
-## Problem Statement #1
 
-'Networking Dog' is a short and randomized dog-walking simulator in which you are a dog trying to increase professional klout by getting humans to stop and pet you during a walk without your owner getting too annoyed (they are resentful of your social media presence and just want you to be normal dog).  
+## Product Plan Components
+1. __Personal Learning Goals__: 
+    - C#: Animations, physics, postprocessing
+    - Physics: Layers and collision matrix, raycast
+    - Lighting
+    - Game Design
+
+1. __Problem Statement__: 'Networking Dog' is a short and randomized dog-walking simulator in which you are a dog trying to increase professional klout by getting humans to stop and pet you during a walk without your owner getting too annoyed (they are resentful of your social media presence and just want you to be normal dog). 
+
+1. __Market Research__: Outline the key insights from your research, including:
+    - http://hairnah.com/
+    - https://captaingames.itch.io/enviro-bear-2000
+    - http://www.sg4adults.eu/files/art-game-design.pdf
+    - http://art.yale.edu/file_columns/0000/1474/homo_ludens_johan_huizinga_routledge_1949_.pdf
+    - https://gamifique.files.wordpress.com/2011/11/1-rules-of-play-game-design-fundamentals.pdf
+    - http://gamestudies.org/0601/articles/rodriges
+    
 
 ## MVP Feature Set
 1. Web Executable 

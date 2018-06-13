@@ -1,5 +1,24 @@
 # networking-dog
 An endless runner game following a small dog trying to gain social media klout through networking on a procedurally generated sidewalk.  Created as a Capstone Project for Ada Developers Academy.
+## Summary
+![networking-dog-trailer](https://github.com/murog/networking-dog/blob/master/networking_dog_trailer.gif)
+
+## Development 
+![stage-0](https://d2w9rnfcy7mm78.cloudfront.net/1554873/original_1450422604ce52e1500e89423c383140.gif)
+
+![stage-1](https://d2w9rnfcy7mm78.cloudfront.net/1628557/large_7e75955cac01a982dafe8d7bd74b65b4.png)
+
+![stage-2](https://d2w9rnfcy7mm78.cloudfront.net/1628558/original_6a6090f50805ead0861343151e30484e.gif)
+
+![stage-3](https://d2w9rnfcy7mm78.cloudfront.net/1628560/large_1e9ede746fc150a073c030ec9241919c.png)
+
+![stage-4](https://d2w9rnfcy7mm78.cloudfront.net/1628562/large_a9e9b1eaba2ae7c4fd705ed43305e8c0.png)
+
+![stage-5](https://d2w9rnfcy7mm78.cloudfront.net/1628561/large_2eddd6fecf21eb481b25fc5ff44a8541.png)
+
+![stage-6](https://github.com/murog/networking-dog/blob/master/networking-profile.png)
+
+![stage-7](https://github.com/murog/networking-dog/blob/master/networking_dog_sidewalk3.gif)
 
 ## Capstone Concept 
 ![networking-dog](https://i.imgur.com/kq7vcyj.png)

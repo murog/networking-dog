@@ -8,8 +8,7 @@ An endless runner game following a small dog trying to gain social media klout t
 
 ![stage-1](https://d2w9rnfcy7mm78.cloudfront.net/1628557/large_7e75955cac01a982dafe8d7bd74b65b4.png)
 
-
-![stage-2](https://d2w9rnfcy7mm78.cloudfront.net/1628558/original_6a6090f50805ead0861343151e30484e.gif)
+![stage-2](https://github.com/murog/networking-dog/blob/master/generated_sidewalk.gif)
 
 ![stage-3](https://d2w9rnfcy7mm78.cloudfront.net/1628560/large_1e9ede746fc150a073c030ec9241919c.png)
 
